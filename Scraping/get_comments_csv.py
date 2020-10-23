@@ -3,7 +3,7 @@ import json
 import csv
 
 client_id = 'zfpe6zkbszk1hez9g9hcxykn14ew4i'
-video_id = '761262980'
+video_id = '745701578'
 index_count = 0
 # 一回目のリクエスト
 url = 'https://api.twitch.tv/v5/videos/' + video_id + '/comments?content_offset_seconds=0'
@@ -39,6 +39,8 @@ while '_next' in row_data:
                 'emoticons' in comment['message']
             ])
             index_count += 1
+
+    print(index_count)
 
 # 最後にrow_dataを出力する処理
 # コメント取得完了 or エラー　を判定するため
