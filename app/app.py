@@ -8,6 +8,7 @@ def home(req, resp):
 
 @api.route("/grapht")
 def grapth(req, resp):
+    # todo urlが正しいかどうかのチェック
     resp.html = api.template('grapht.html', url=req.params['url'])
 
 # debug=Trueをつけてもデバッグモードにならないため

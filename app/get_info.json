@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "id": "739949384",
+            "user_id": "109776767",
+            "user_name": "delave_fps",
+            "title": "【DeToNator】 打ち上げOverwatch（一人？）",
+            "description": "",
+            "created_at": "2020-09-13T14:15:18Z",
+            "published_at": "2020-09-13T14:15:18Z",
+            "url": "https://www.twitch.tv/videos/739949384",
+            "thumbnail_url": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/93807f08762bab4d0ee1_delave_fps_39667847326_1600006508//thumb/thumb0-%{width}x%{height}.jpg",
+            "viewable": "public",
+            "view_count": 7415,
+            "language": "ja",
+            "type": "archive",
+            "duration": "2h7m40s"
+        }
+    ],
+    "pagination": {}
+}
