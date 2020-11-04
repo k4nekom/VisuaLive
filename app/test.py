@@ -51,15 +51,35 @@ class TestTwitch:
 
     # app_access_tokenの期限が切れて、無効になっていた場合のテスト
     def test_get_info_with_invalid_token(self, mocker, video):
-        res_mock = mocker.Mock()
-        res_mock.status_code = 404
-        res_mock.text = '{"error": "Unauthorized", "status": 401, "message": "Invalid OAuth token"}'
+        # 無効なトークンで動画情報を取得しようとした場合のモック
+        error_res_mock = mocker.Mock()
+        error_res_mock.status_code = 401
+        error_res_mock.text = '{"error": "Unauthorized", "status": 401, "message": "Invalid OAuth token"}'
+        # 有効なトークンで動画情報を取得しようとした場合のモック
+        ok_res_mock = mocker.Mock()
+        ok_res_mock.status_code = 200
+        with open('get_info.json') as f:
+            ok_res_mock.text = f.read()
 
-        mocker.patch('requests.get').return_value = res_mock
+        mocker.patch('requests.get').side_effect = [error_res_mock, ok_res_mock]
 
-        # todo requestsが投げる例外の正体がわからない
-        with pytest.raises(Exception):
-            video.get_info()
+        # 新しいトークンを取得する処理のモック
+        with open('config.json', 'r') as f:
+            config = json.load(f)
+        get_token_mock = mocker.Mock()
+        get_token_mock.status_code = 200
+        get_token_mock.text = '{"access_token": "' + config['twitch']['app_access_token'] + '", "expires_in": 5669710, "token_type": "bearer"}'
+        
+        mocker.patch('requests.post').return_value = get_token_mock
+
+        video_info = video.get_info()
+
+        assert 'user_name' in video_info
+        assert 'title' in video_info
+        assert 'created_at' in video_info
+        assert 'url' in video_info
+        assert 'duration_minutes' in video_info
+        assert type(video_info['duration_minutes']) is int
 
 
     def test_get_token(self, mocker, video):
