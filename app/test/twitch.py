@@ -115,23 +115,32 @@ class TestTwitch:
 
 
     def test_get_comments(self, mocker, video):
-        # コメント取得のモック(nextあり)
-        res_mock_with_next = mocker.Mock()
-        res_mock_with_next.status_code = 200
+        # 動画情報取得のモック
+        get_info_mock = mocker.Mock()
+        get_info_mock.status_code = 200
+        with open('json/video_info.json') as f:
+            get_info_mock.text = f.read()
+        # コメント取得のモック(_nextあり)
+        with_next_mock = mocker.Mock()
+        with_next_mock.status_code = 200
         with open('json/twitch_comment_with_next.json') as f:
-            res_mock_with_next.text = f.read()
-        # コメント取得のモック（nextなし）
-        res_mock_without_next = mocker.Mock()
-        res_mock_without_next.status_code = 200
+            with_next_mock.text = f.read()
+        # コメント取得のモック（_nextなし）
+        without_next_mock = mocker.Mock()
+        without_next_mock.status_code = 200
         with open('json/twitch_comment_without_next.json') as f:
-            res_mock_without_next.text = f.read()
+            without_next_mock.text = f.read()
 
-        mocker.patch('requests.get').side_effect = [res_mock_with_next, res_mock_without_next]
+        mocker.patch('requests.get').side_effect = [get_info_mock, with_next_mock, without_next_mock]
 
         comment_data = video.get_comment_data()
-        assert 'minutes' in comment_data
-        assert type(comment_data['minutes'][0]) is int
-        assert 'comment_count' in comment_data
-        assert type(comment_data['comment_count'][0]) is int
-        assert 'w_count' in comment_data
+        assert sum(comment_data['comment_count']) == 84
         assert type(comment_data['w_count'][0]) is int
+
+
+    # ------実際にtwitch apiを叩くテスト----------
+    # def test_get_comments_real_api(self, video):
+    #     comment_data = video.get_comment_data()
+    #     assert sum(comment_data['comment_count']) == 84
+    #     assert type(comment_data['w_count'][0]) is int
+    # ------------------------------------------

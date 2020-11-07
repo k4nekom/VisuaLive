@@ -38,7 +38,6 @@ class TwitchVideo:
         self.app_access_token = res_text_dict['access_token']
 
 
-    #　この関数は例外を投げる（raise_for_status()）
     def get_info(self):
         url = 'https://api.twitch.tv/helix/videos?id=' + self.video_id
         headers = {
@@ -84,4 +83,44 @@ class TwitchVideo:
  
     
     def get_comment_data(self):
-        return 'dict'
+        info = self.get_info()
+        comment_count = [0] * (info['duration_minutes'])
+        w_count = [0] * (info['duration_minutes'])
+        
+        # 一回目のコメント取得リクエスト
+        url = 'https://api.twitch.tv/v5/videos/' + self.video_id + '/comments?content_offset_seconds=0'
+        headers = {'client-id': self.client_id}
+        res = requests.get(url, headers=headers)
+        res_dict = json.loads(res.text)
+            
+        for comment in res_dict['comments']:
+            commented_minute = int(comment['content_offset_seconds'] // 60)
+            comment_count[commented_minute] += 1
+            # コメントにwがあれば、w_countを増やす
+            t = comment['message']['body']
+            if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
+                w_count[commented_minute] += 1
+
+        # 二回目以降のコメント取得リクエスト
+        while '_next' in res_dict:
+            url = 'https://api.twitch.tv/v5/videos/' + self.video_id + '/comments?cursor=' + res_dict['_next']
+            headers = {'client-id': self.client_id}
+            res = requests.get(url, headers=headers)
+            res_dict = json.loads(res.text)
+
+            for comment in res_dict['comments']:
+                commented_minute = int(comment['content_offset_seconds'] // 60)
+                comment_count[commented_minute] += 1
+                # コメントにwがあれば、w_countを増やす
+                t = comment['message']['body']
+                if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
+                    w_count[commented_minute] += 1
+
+        comments_data = {
+            'comment_count': comment_count,
+            'w_count': w_count
+        }
+
+        print(comments_data)
+                
+        return comments_data
