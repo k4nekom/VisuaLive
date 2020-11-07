@@ -1,8 +1,10 @@
+import sys
 import json
 
 import pytest
 
-from twitch import TwitchVideo
+sys.path.append('../')
+from external.twitch import TwitchVideo
 
 @pytest.fixture()
 def video():
@@ -11,7 +13,7 @@ def video():
 
 class TestTwitch:
     def test_init(self, video):
-        with open('config.json', 'r') as f:
+        with open('../config/config.json', 'r') as f:
             config = json.load(f)
 
         assert video.video_id == '739949384'
@@ -23,7 +25,7 @@ class TestTwitch:
     def test_get_info(self, mocker, video):
         res_mock = mocker.Mock()
         res_mock.status_code = 200
-        with open('get_info.json') as f:
+        with open('json/video_info.json') as f:
             res_mock.text = f.read()
 
         mocker.patch('requests.get').return_value = res_mock
@@ -58,13 +60,13 @@ class TestTwitch:
         # 有効なトークンで動画情報を取得しようとした場合のモック
         ok_res_mock = mocker.Mock()
         ok_res_mock.status_code = 200
-        with open('get_info.json') as f:
+        with open('json/video_info.json') as f:
             ok_res_mock.text = f.read()
 
         mocker.patch('requests.get').side_effect = [error_res_mock, ok_res_mock]
 
         # 新しいトークンを取得する処理のモック
-        with open('config.json', 'r') as f:
+        with open('../config/config.json', 'r') as f:
             config = json.load(f)
         get_token_mock = mocker.Mock()
         get_token_mock.status_code = 200
@@ -83,7 +85,7 @@ class TestTwitch:
 
 
     def test_get_token(self, mocker, video):
-        with open('config.json', 'r') as f:
+        with open('../config/config.json', 'r') as f:
             config = json.load(f)
 
         get_token_mock = mocker.Mock()
@@ -96,7 +98,7 @@ class TestTwitch:
         assert video.app_access_token == 'sample_token_for_test'
 
         # テスト用に変更したtokenを元に戻す
-        with open('config.json', 'w') as f:
+        with open('../config/config.json', 'w') as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
         # テスト用に変更したtokenが元に戻っているか確認
         # assert video.app_access_token == config['twitch']['app_access_token']
@@ -104,7 +106,7 @@ class TestTwitch:
 
     # ------実際にtwitch apiを叩くテスト----------
     # def test_get_token_real_api(self, mocker, video):
-    #     with open('config.json', 'r') as f:
+    #     with open('../config/config.json', 'r') as f:
     #         config = json.load(f)
 
     #     video.get_token()
