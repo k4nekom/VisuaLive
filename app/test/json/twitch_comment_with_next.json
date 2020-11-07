@@ -1,0 +1,2375 @@
+{
+    "comments": [
+        {
+            "_id": "caf04246-9e25-4c2d-a196-49d798a4ff71",
+            "created_at": "2020-09-13T14:15:40.465Z",
+            "updated_at": "2020-09-13T14:15:40.465Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 20.765,
+            "commenter": {
+                "display_name": "submit_00",
+                "_id": "228911137",
+                "name": "submit_00",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-06-05T17:18:28.772577Z",
+                "updated_at": "2020-09-30T08:12:20.430229Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/b27ccff9-e889-4a4d-ba7b-df2a53f2614b-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "LUL",
+                "emoticons": [
+                    {
+                        "_id": "425618",
+                        "begin": 0,
+                        "end": 2
+                    }
+                ],
+                "fragments": [
+                    {
+                        "text": "LUL",
+                        "emoticon": {
+                            "emoticon_id": "425618",
+                            "emoticon_set_id": ""
+                        }
+                    }
+                ],
+                "is_action": false,
+                "user_color": "#B22222",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "643feee7-618b-48a5-bbf6-1efae2a893de",
+            "created_at": "2020-09-13T14:24:47.456Z",
+            "updated_at": "2020-09-13T14:24:47.456Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 567.756,
+            "commenter": {
+                "display_name": "niki_ow",
+                "_id": "426355450",
+                "name": "niki_ow",
+                "type": "user",
+                "bio": "にき",
+                "created_at": "2019-03-28T14:12:55.542223Z",
+                "updated_at": "2020-11-01T10:27:05.610201Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/3feed454-5c87-4f7c-ba48-c144df0c7b10-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ねるさんのVCすき",
+                "fragments": [
+                    {
+                        "text": "ねるさんのVCすき"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "691ed2f8-5412-48ad-9a16-c740ec297912",
+            "created_at": "2020-09-13T14:25:03.428Z",
+            "updated_at": "2020-09-13T14:25:03.428Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 583.728,
+            "commenter": {
+                "display_name": "naokinao",
+                "_id": "452648765",
+                "name": "naokinao",
+                "type": "user",
+                "bio": null,
+                "created_at": "2019-08-05T02:07:30.25315Z",
+                "updated_at": "2020-10-24T09:20:03.774195Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/3f462f6e-0949-4c85-98b4-7c8f6ca57739-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "やっぱうまいなぁ",
+                "fragments": [
+                    {
+                        "text": "やっぱうまいなぁ"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "bac381a3-ae58-47ab-a49a-ecfb826fe075",
+            "created_at": "2020-09-13T14:25:47.365Z",
+            "updated_at": "2020-09-13T14:25:47.365Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 627.665,
+            "commenter": {
+                "display_name": "naokinao",
+                "_id": "452648765",
+                "name": "naokinao",
+                "type": "user",
+                "bio": null,
+                "created_at": "2019-08-05T02:07:30.25315Z",
+                "updated_at": "2020-10-24T09:20:03.774195Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/3f462f6e-0949-4c85-98b4-7c8f6ca57739-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "げろみたいなやつ笑笑",
+                "fragments": [
+                    {
+                        "text": "げろみたいなやつ笑笑"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "e6f5be16-1600-4314-8fd0-60049cb57916",
+            "created_at": "2020-09-13T14:27:46.554Z",
+            "updated_at": "2020-09-13T14:27:46.554Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 746.854,
+            "commenter": {
+                "display_name": "河口冬馬",
+                "_id": "464348840",
+                "name": "thomastar66",
+                "type": "user",
+                "bio": "自分のゲームを後から見返すために始めました〜好きな配信者はデトネーターです！よろしくお願いします🤲",
+                "created_at": "2019-09-27T08:47:22.564729Z",
+                "updated_at": "2020-11-06T17:07:06.264184Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/f5874b76-4ed3-4ece-b64e-3ca28823c073-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "spygeaDoya spygeaDoya spygeaDoya spygeaHi spygeaHi spygeaHi",
+                "emoticons": [
+                    {
+                        "_id": "210335",
+                        "begin": 0,
+                        "end": 9
+                    },
+                    {
+                        "_id": "210335",
+                        "begin": 11,
+                        "end": 20
+                    },
+                    {
+                        "_id": "210335",
+                        "begin": 22,
+                        "end": 31
+                    },
+                    {
+                        "_id": "210336",
+                        "begin": 33,
+                        "end": 40
+                    },
+                    {
+                        "_id": "210336",
+                        "begin": 42,
+                        "end": 49
+                    },
+                    {
+                        "_id": "210336",
+                        "begin": 51,
+                        "end": 58
+                    }
+                ],
+                "fragments": [
+                    {
+                        "text": "spygeaDoya",
+                        "emoticon": {
+                            "emoticon_id": "210335",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "spygeaDoya",
+                        "emoticon": {
+                            "emoticon_id": "210335",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "spygeaDoya",
+                        "emoticon": {
+                            "emoticon_id": "210335",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "spygeaHi",
+                        "emoticon": {
+                            "emoticon_id": "210336",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "spygeaHi",
+                        "emoticon": {
+                            "emoticon_id": "210336",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "spygeaHi",
+                        "emoticon": {
+                            "emoticon_id": "210336",
+                            "emoticon_set_id": ""
+                        }
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "05969ae5-73d4-4b55-90a9-7bb6db39c640",
+            "created_at": "2020-09-13T14:28:31.262Z",
+            "updated_at": "2020-09-13T14:28:31.262Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 791.562,
+            "commenter": {
+                "display_name": "wheatlynx",
+                "_id": "462420940",
+                "name": "wheatlynx",
+                "type": "user",
+                "bio": null,
+                "created_at": "2019-09-15T02:14:49.504872Z",
+                "updated_at": "2020-11-06T13:37:23.232231Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ce57700a-def9-11e9-842d-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "なんで地獄になってんの？w",
+                "fragments": [
+                    {
+                        "text": "なんで地獄になってんの？w"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "60695855-8527-481d-b85b-baceb27602dc",
+            "created_at": "2020-09-13T14:32:43.13Z",
+            "updated_at": "2020-09-13T14:32:43.13Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 1043.43,
+            "commenter": {
+                "display_name": "submit_00",
+                "_id": "228911137",
+                "name": "submit_00",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-06-05T17:18:28.772577Z",
+                "updated_at": "2020-09-30T08:12:20.430229Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/b27ccff9-e889-4a4d-ba7b-df2a53f2614b-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "LUL",
+                "emoticons": [
+                    {
+                        "_id": "425618",
+                        "begin": 0,
+                        "end": 2
+                    }
+                ],
+                "fragments": [
+                    {
+                        "text": "LUL",
+                        "emoticon": {
+                            "emoticon_id": "425618",
+                            "emoticon_set_id": ""
+                        }
+                    }
+                ],
+                "is_action": false,
+                "user_color": "#B22222",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "a8ac9df7-3673-4f88-975a-6b793fc293c5",
+            "created_at": "2020-09-13T14:41:40.014Z",
+            "updated_at": "2020-09-13T14:41:40.014Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 1580.314,
+            "commenter": {
+                "display_name": "oregastar",
+                "_id": "215197566",
+                "name": "oregastar",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-04-18T13:48:46.97304Z",
+                "updated_at": "2020-10-10T01:44:19.802761Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebe4cd89-b4f4-4cd9-adac-2f30151b4209-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "忙しいゲームやなｗ",
+                "fragments": [
+                    {
+                        "text": "忙しいゲームやなｗ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "e411965b-0588-4590-95e5-6196b43e108e",
+            "created_at": "2020-09-13T14:43:32.566Z",
+            "updated_at": "2020-09-13T14:43:32.566Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 1692.866,
+            "commenter": {
+                "display_name": "Sairu",
+                "_id": "24279491",
+                "name": "sairu",
+                "type": "user",
+                "bio": "視聴者",
+                "created_at": "2011-08-22T13:49:10.487168Z",
+                "updated_at": "2020-11-06T13:53:48.822287Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/448501705f55abe4-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "早く死んでｗ",
+                "fragments": [
+                    {
+                        "text": "早く死んでｗ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#8078DC",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "7b0d2e33-bb27-40e0-af65-6c28573bc3ca",
+            "created_at": "2020-09-13T14:44:20.447Z",
+            "updated_at": "2020-09-13T14:44:20.447Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 1740.747,
+            "commenter": {
+                "display_name": "ro_ni62",
+                "_id": "463144506",
+                "name": "ro_ni62",
+                "type": "user",
+                "bio": null,
+                "created_at": "2019-09-19T09:14:08.169513Z",
+                "updated_at": "2020-11-05T07:05:07.834303Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/cdd517fe-def4-11e9-948e-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ねるさんのファラきちゃあ",
+                "fragments": [
+                    {
+                        "text": "ねるさんのファラきちゃあ"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "73392a5e-c3a1-4827-ab1d-d715719cc89a",
+            "created_at": "2020-09-13T14:44:21.354Z",
+            "updated_at": "2020-09-13T14:44:21.354Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 1741.654,
+            "commenter": {
+                "display_name": "shiroringo_rin",
+                "_id": "161733481",
+                "name": "shiroringo_rin",
+                "type": "user",
+                "bio": "Ubi垢→shiroringo_rin discord→白りんご #4699",
+                "created_at": "2017-06-27T08:59:39.316603Z",
+                "updated_at": "2020-11-05T15:39:12.264327Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/95c3a05a-319d-465e-82af-4d8cba9fdb2c-profile_image-300x300.jpg"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ｷﾀ━(ﾟ∀ﾟ)━!",
+                "fragments": [
+                    {
+                        "text": "ｷﾀ━(ﾟ∀ﾟ)━!"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#0000FF",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "6ad29e93-f598-4b83-a084-bb6795162e42",
+            "created_at": "2020-09-13T14:45:58.594Z",
+            "updated_at": "2020-09-13T14:45:58.594Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 1838.894,
+            "commenter": {
+                "display_name": "shiroringo_rin",
+                "_id": "161733481",
+                "name": "shiroringo_rin",
+                "type": "user",
+                "bio": "Ubi垢→shiroringo_rin discord→白りんご #4699",
+                "created_at": "2017-06-27T08:59:39.316603Z",
+                "updated_at": "2020-11-05T15:39:12.264327Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/95c3a05a-319d-465e-82af-4d8cba9fdb2c-profile_image-300x300.jpg"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "PogChamp PogChamp PogChamp PogChamp PogChamp",
+                "emoticons": [
+                    {
+                        "_id": "88",
+                        "begin": 0,
+                        "end": 7
+                    },
+                    {
+                        "_id": "88",
+                        "begin": 9,
+                        "end": 16
+                    },
+                    {
+                        "_id": "88",
+                        "begin": 18,
+                        "end": 25
+                    },
+                    {
+                        "_id": "88",
+                        "begin": 27,
+                        "end": 34
+                    },
+                    {
+                        "_id": "88",
+                        "begin": 36,
+                        "end": 43
+                    }
+                ],
+                "fragments": [
+                    {
+                        "text": "PogChamp",
+                        "emoticon": {
+                            "emoticon_id": "88",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "PogChamp",
+                        "emoticon": {
+                            "emoticon_id": "88",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "PogChamp",
+                        "emoticon": {
+                            "emoticon_id": "88",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "PogChamp",
+                        "emoticon": {
+                            "emoticon_id": "88",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "PogChamp",
+                        "emoticon": {
+                            "emoticon_id": "88",
+                            "emoticon_set_id": ""
+                        }
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#0000FF",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "49cb24fd-430e-4373-b92e-d9703e3e1389",
+            "created_at": "2020-09-13T14:46:26.71Z",
+            "updated_at": "2020-09-13T14:46:26.71Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 1867.01,
+            "commenter": {
+                "display_name": "shiroringo_rin",
+                "_id": "161733481",
+                "name": "shiroringo_rin",
+                "type": "user",
+                "bio": "Ubi垢→shiroringo_rin discord→白りんご #4699",
+                "created_at": "2017-06-27T08:59:39.316603Z",
+                "updated_at": "2020-11-05T15:39:12.264327Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/95c3a05a-319d-465e-82af-4d8cba9fdb2c-profile_image-300x300.jpg"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "wwwwww",
+                "fragments": [
+                    {
+                        "text": "wwwwww"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#0000FF",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "4d0cdcfd-d09a-4aba-9b09-81a752393639",
+            "created_at": "2020-09-13T14:48:04.868Z",
+            "updated_at": "2020-09-13T14:48:04.868Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 1965.168,
+            "commenter": {
+                "display_name": "oregastar",
+                "_id": "215197566",
+                "name": "oregastar",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-04-18T13:48:46.97304Z",
+                "updated_at": "2020-10-10T01:44:19.802761Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebe4cd89-b4f4-4cd9-adac-2f30151b4209-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "やるー",
+                "fragments": [
+                    {
+                        "text": "やるー"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "6b28dc0e-a6ee-4557-80bb-15c684eae05d",
+            "created_at": "2020-09-13T14:48:45.475Z",
+            "updated_at": "2020-09-13T14:48:45.475Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 2005.775,
+            "commenter": {
+                "display_name": "oregastar",
+                "_id": "215197566",
+                "name": "oregastar",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-04-18T13:48:46.97304Z",
+                "updated_at": "2020-10-10T01:44:19.802761Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebe4cd89-b4f4-4cd9-adac-2f30151b4209-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ｇｇ",
+                "fragments": [
+                    {
+                        "text": "ｇｇ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "92c97817-8455-4c5b-b13d-05a0243a94ba",
+            "created_at": "2020-09-13T14:56:00.621Z",
+            "updated_at": "2020-09-13T14:56:00.621Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 2440.921,
+            "commenter": {
+                "display_name": "shiroringo_rin",
+                "_id": "161733481",
+                "name": "shiroringo_rin",
+                "type": "user",
+                "bio": "Ubi垢→shiroringo_rin discord→白りんご #4699",
+                "created_at": "2017-06-27T08:59:39.316603Z",
+                "updated_at": "2020-11-05T15:39:12.264327Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/95c3a05a-319d-465e-82af-4d8cba9fdb2c-profile_image-300x300.jpg"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "www",
+                "fragments": [
+                    {
+                        "text": "www"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#0000FF",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "a3952e52-7402-4159-959c-3cbd7859eff2",
+            "created_at": "2020-09-13T14:56:23.756Z",
+            "updated_at": "2020-09-13T14:56:23.756Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 2464.056,
+            "commenter": {
+                "display_name": "shiroringo_rin",
+                "_id": "161733481",
+                "name": "shiroringo_rin",
+                "type": "user",
+                "bio": "Ubi垢→shiroringo_rin discord→白りんご #4699",
+                "created_at": "2017-06-27T08:59:39.316603Z",
+                "updated_at": "2020-11-05T15:39:12.264327Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/95c3a05a-319d-465e-82af-4d8cba9fdb2c-profile_image-300x300.jpg"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "トレゲン結局強いしなぁ",
+                "fragments": [
+                    {
+                        "text": "トレゲン結局強いしなぁ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#0000FF",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "1c0eadbe-4679-4b24-b917-615d41087716",
+            "created_at": "2020-09-13T14:56:50.137Z",
+            "updated_at": "2020-09-13T14:56:50.137Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 2490.437,
+            "commenter": {
+                "display_name": "niki_ow",
+                "_id": "426355450",
+                "name": "niki_ow",
+                "type": "user",
+                "bio": "にき",
+                "created_at": "2019-03-28T14:12:55.542223Z",
+                "updated_at": "2020-11-01T10:27:05.610201Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/3feed454-5c87-4f7c-ba48-c144df0c7b10-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ねるさんトレーサー(´；ω；｀)",
+                "fragments": [
+                    {
+                        "text": "ねるさんトレーサー(´；ω；｀)"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "f8d13965-749c-4022-93c9-e2259d47d0c1",
+            "created_at": "2020-09-13T14:56:53.131Z",
+            "updated_at": "2020-09-13T14:56:53.131Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 2493.431,
+            "commenter": {
+                "display_name": "niki_ow",
+                "_id": "426355450",
+                "name": "niki_ow",
+                "type": "user",
+                "bio": "にき",
+                "created_at": "2019-03-28T14:12:55.542223Z",
+                "updated_at": "2020-11-01T10:27:05.610201Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/3feed454-5c87-4f7c-ba48-c144df0c7b10-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "うれしい",
+                "fragments": [
+                    {
+                        "text": "うれしい"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "d447d390-5f0a-453e-b3ec-6776f1ed5676",
+            "created_at": "2020-09-13T14:57:46.491Z",
+            "updated_at": "2020-09-13T14:57:46.491Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 2546.791,
+            "commenter": {
+                "display_name": "shiroringo_rin",
+                "_id": "161733481",
+                "name": "shiroringo_rin",
+                "type": "user",
+                "bio": "Ubi垢→shiroringo_rin discord→白りんご #4699",
+                "created_at": "2017-06-27T08:59:39.316603Z",
+                "updated_at": "2020-11-05T15:39:12.264327Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/95c3a05a-319d-465e-82af-4d8cba9fdb2c-profile_image-300x300.jpg"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "PogChamp PogChamp PogChamp",
+                "emoticons": [
+                    {
+                        "_id": "88",
+                        "begin": 0,
+                        "end": 7
+                    },
+                    {
+                        "_id": "88",
+                        "begin": 9,
+                        "end": 16
+                    },
+                    {
+                        "_id": "88",
+                        "begin": 18,
+                        "end": 25
+                    }
+                ],
+                "fragments": [
+                    {
+                        "text": "PogChamp",
+                        "emoticon": {
+                            "emoticon_id": "88",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "PogChamp",
+                        "emoticon": {
+                            "emoticon_id": "88",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "PogChamp",
+                        "emoticon": {
+                            "emoticon_id": "88",
+                            "emoticon_set_id": ""
+                        }
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#0000FF",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "13fca18e-2d20-474f-a991-397d67a97938",
+            "created_at": "2020-09-13T14:58:07.72Z",
+            "updated_at": "2020-09-13T14:58:07.72Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 2568.02,
+            "commenter": {
+                "display_name": "esuperensa",
+                "_id": "104966374",
+                "name": "esuperensa",
+                "type": "user",
+                "bio": null,
+                "created_at": "2015-10-23T11:21:46.160571Z",
+                "updated_at": "2020-09-13T15:31:57.158901Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/cdd517fe-def4-11e9-948e-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "メンツかわんない笑笑",
+                "fragments": [
+                    {
+                        "text": "メンツかわんない笑笑"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "412f74cc-3e43-47b8-9ad2-81f0d6deba21",
+            "created_at": "2020-09-13T14:59:33.837Z",
+            "updated_at": "2020-09-13T14:59:33.837Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 2654.137,
+            "commenter": {
+                "display_name": "esuperensa",
+                "_id": "104966374",
+                "name": "esuperensa",
+                "type": "user",
+                "bio": null,
+                "created_at": "2015-10-23T11:21:46.160571Z",
+                "updated_at": "2020-09-13T15:31:57.158901Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/cdd517fe-def4-11e9-948e-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "寝るわ",
+                "fragments": [
+                    {
+                        "text": "寝るわ"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "6c3a6fae-99f6-411b-ab67-7fb20aeed4ec",
+            "created_at": "2020-09-13T15:05:46.782Z",
+            "updated_at": "2020-09-13T15:05:46.782Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3027.082,
+            "commenter": {
+                "display_name": "mentai_baka_tikuwa",
+                "_id": "174236999",
+                "name": "mentai_baka_tikuwa",
+                "type": "user",
+                "bio": null,
+                "created_at": "2017-09-15T09:19:32.685501Z",
+                "updated_at": "2020-10-28T19:44:42.887524Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/215b7342-def9-11e9-9a66-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "delaveReaper",
+                "emoticons": [
+                    {
+                        "_id": "108985",
+                        "begin": 0,
+                        "end": 11
+                    }
+                ],
+                "fragments": [
+                    {
+                        "text": "delaveReaper",
+                        "emoticon": {
+                            "emoticon_id": "108985",
+                            "emoticon_set_id": ""
+                        }
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#2E8B57",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "aac55d5a-7a71-46b7-b21a-fb6b451b1cc3",
+            "created_at": "2020-09-13T15:14:34.196Z",
+            "updated_at": "2020-09-13T15:14:34.196Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3554.496,
+            "commenter": {
+                "display_name": "denn1178",
+                "_id": "194154725",
+                "name": "denn1178",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-02-01T05:07:37.580661Z",
+                "updated_at": "2020-11-06T20:47:11.306922Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebb84563-db81-4b9c-8940-64ed33ccfc7b-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "しおりんさんは寝たんですか？",
+                "fragments": [
+                    {
+                        "text": "しおりんさんは寝たんですか？"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "969a586f-6b93-40f7-9815-3a7075f1296b",
+            "created_at": "2020-09-13T15:14:47.371Z",
+            "updated_at": "2020-09-13T15:14:47.371Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3567.671,
+            "commenter": {
+                "display_name": "niki_ow",
+                "_id": "426355450",
+                "name": "niki_ow",
+                "type": "user",
+                "bio": "にき",
+                "created_at": "2019-03-28T14:12:55.542223Z",
+                "updated_at": "2020-11-01T10:27:05.610201Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/3feed454-5c87-4f7c-ba48-c144df0c7b10-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "しおりんは明日早いから寝ました",
+                "fragments": [
+                    {
+                        "text": "しおりんは明日早いから寝ました"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "971aed75-8d86-4c76-814d-72d709e30927",
+            "created_at": "2020-09-13T15:15:04.124Z",
+            "updated_at": "2020-09-13T15:15:04.124Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3584.424,
+            "commenter": {
+                "display_name": "denn1178",
+                "_id": "194154725",
+                "name": "denn1178",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-02-01T05:07:37.580661Z",
+                "updated_at": "2020-11-06T20:47:11.306922Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebb84563-db81-4b9c-8940-64ed33ccfc7b-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "なるほど！ありがとうござます！",
+                "fragments": [
+                    {
+                        "text": "なるほど！ありがとうござます！"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "f6511d78-e018-458d-ae1e-256389bacc3e",
+            "created_at": "2020-09-13T15:16:13.041Z",
+            "updated_at": "2020-09-13T15:16:13.041Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3653.341,
+            "commenter": {
+                "display_name": "niki_ow",
+                "_id": "426355450",
+                "name": "niki_ow",
+                "type": "user",
+                "bio": "にき",
+                "created_at": "2019-03-28T14:12:55.542223Z",
+                "updated_at": "2020-11-01T10:27:05.610201Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/3feed454-5c87-4f7c-ba48-c144df0c7b10-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "きもちいいいいいい",
+                "fragments": [
+                    {
+                        "text": "きもちいいいいいい"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "5451e087-97d7-4952-a700-3dbfe58b9bbd",
+            "created_at": "2020-09-13T15:16:19.682Z",
+            "updated_at": "2020-09-13T15:16:19.682Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3659.982,
+            "commenter": {
+                "display_name": "denn1178",
+                "_id": "194154725",
+                "name": "denn1178",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-02-01T05:07:37.580661Z",
+                "updated_at": "2020-11-06T20:47:11.306922Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebb84563-db81-4b9c-8940-64ed33ccfc7b-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "w",
+                "fragments": [
+                    {
+                        "text": "w"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "d71ca901-cb54-4c86-b901-04dae51b0bba",
+            "created_at": "2020-09-13T15:16:38.877Z",
+            "updated_at": "2020-09-13T15:16:38.877Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3679.177,
+            "commenter": {
+                "display_name": "ovulias_omega",
+                "_id": "124306167",
+                "name": "ovulias_omega",
+                "type": "user",
+                "bio": null,
+                "created_at": "2016-05-15T10:25:36.437419Z",
+                "updated_at": "2020-09-13T15:22:51.062498Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebb84563-db81-4b9c-8940-64ed33ccfc7b-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ねるさんって今なんのゲームやってるんですか？",
+                "fragments": [
+                    {
+                        "text": "ねるさんって今なんのゲームやってるんですか？"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "09f242d8-69b8-4ef6-9466-5a6fac871a16",
+            "created_at": "2020-09-13T15:16:52.618Z",
+            "updated_at": "2020-09-13T15:16:52.618Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3692.918,
+            "commenter": {
+                "display_name": "tapir_ta",
+                "_id": "495163521",
+                "name": "tapir_ta",
+                "type": "user",
+                "bio": "シャドバ、Apex",
+                "created_at": "2020-02-25T11:12:40.473385Z",
+                "updated_at": "2020-10-28T15:13:32.336129Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/50b796e7-315d-4a15-a24f-8d271474c2a8-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "デスブロッサム最高",
+                "fragments": [
+                    {
+                        "text": "デスブロッサム最高"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "a4404663-c09b-49e8-a6c9-9284ef8f9d73",
+            "created_at": "2020-09-13T15:18:01.366Z",
+            "updated_at": "2020-09-13T15:18:01.366Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 3761.666,
+            "commenter": {
+                "display_name": "hoot_ater",
+                "_id": "166930292",
+                "name": "hoot_ater",
+                "type": "user",
+                "bio": null,
+                "created_at": "2017-07-27T10:25:04.083327Z",
+                "updated_at": "2020-09-28T19:45:51.285293Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/e671d056-b207-4351-b599-56de4c091730-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "gg",
+                "fragments": [
+                    {
+                        "text": "gg"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "0c811f2b-1f7d-4145-a0a1-e700186b3fb4",
+            "created_at": "2020-09-13T15:22:08.247Z",
+            "updated_at": "2020-09-13T15:22:08.247Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4008.547,
+            "commenter": {
+                "display_name": "あじむ",
+                "_id": "184608878",
+                "name": "ajimu97",
+                "type": "user",
+                "bio": "＾－＾",
+                "created_at": "2017-12-06T11:27:07.70278Z",
+                "updated_at": "2020-09-24T07:07:11.969694Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/79b83a6f-b50e-4f21-9d4d-387d31065cd1-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "やっぱねるさんのファラうまいわ",
+                "fragments": [
+                    {
+                        "text": "やっぱねるさんのファラうまいわ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#1E90FF",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "4ca17951-ce4a-4d5d-9fb0-c06f881cbddc",
+            "created_at": "2020-09-13T15:25:58.72Z",
+            "updated_at": "2020-09-13T15:25:58.72Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4239.02,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "えくすきゅー？！？！",
+                "fragments": [
+                    {
+                        "text": "えくすきゅー？！？！"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "f34c3bfb-9915-44c2-bbec-136d35eefa59",
+            "created_at": "2020-09-13T15:26:18.785Z",
+            "updated_at": "2020-09-13T15:26:18.785Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4259.085,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ないすぅ",
+                "fragments": [
+                    {
+                        "text": "ないすぅ"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "0d8010f3-70dd-4673-8971-dbf1c30c5d81",
+            "created_at": "2020-09-13T15:28:06.238Z",
+            "updated_at": "2020-09-13T15:28:06.238Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4366.538,
+            "commenter": {
+                "display_name": "nanitumo",
+                "_id": "106014147",
+                "name": "nanitumo",
+                "type": "user",
+                "bio": null,
+                "created_at": "2015-11-03T08:51:32.585445Z",
+                "updated_at": "2020-11-06T12:01:11.369732Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/75305d54-c7cc-40d1-bb9c-91fbe85943c7-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "うめーｗ",
+                "fragments": [
+                    {
+                        "text": "うめーｗ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "d7dc1964-5a7b-4960-ab30-e806cd2a8dd2",
+            "created_at": "2020-09-13T15:28:34.072Z",
+            "updated_at": "2020-09-13T15:28:34.072Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4394.372,
+            "commenter": {
+                "display_name": "zagaga8",
+                "_id": "421459026",
+                "name": "zagaga8",
+                "type": "user",
+                "bio": null,
+                "created_at": "2019-03-05T13:12:21.83413Z",
+                "updated_at": "2020-09-13T15:28:34.15208Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/215b7342-def9-11e9-9a66-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "xqうますぎよ",
+                "fragments": [
+                    {
+                        "text": "xqうますぎよ"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "84f8d5dd-e9b7-4ca9-8fba-0ac0ace5f1ae",
+            "created_at": "2020-09-13T15:29:15.654Z",
+            "updated_at": "2020-09-13T15:29:15.654Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4435.954,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "楽しいーー！(遺言)",
+                "fragments": [
+                    {
+                        "text": "楽しいーー！(遺言)"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "8653f151-eb22-4a31-8a1c-6604808c056d",
+            "created_at": "2020-09-13T15:29:31.474Z",
+            "updated_at": "2020-09-13T15:29:31.474Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4451.774,
+            "commenter": {
+                "display_name": "Sairu",
+                "_id": "24279491",
+                "name": "sairu",
+                "type": "user",
+                "bio": "視聴者",
+                "created_at": "2011-08-22T13:49:10.487168Z",
+                "updated_at": "2020-11-06T13:53:48.822287Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/448501705f55abe4-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "つええ！",
+                "fragments": [
+                    {
+                        "text": "つええ！"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#8078DC",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "23a81f50-c1cd-43d1-a2da-c026d189a83f",
+            "created_at": "2020-09-13T15:30:15.172Z",
+            "updated_at": "2020-09-13T15:30:15.172Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4495.472,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "これが光…",
+                "fragments": [
+                    {
+                        "text": "これが光…"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "352e06e3-a463-4225-b891-6b3e59063689",
+            "created_at": "2020-09-13T15:31:09.49Z",
+            "updated_at": "2020-09-13T15:31:09.49Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4549.79,
+            "commenter": {
+                "display_name": "AnAnonymousCheerer",
+                "_id": "407665396",
+                "name": "ananonymouscheerer",
+                "type": "user",
+                "bio": null,
+                "created_at": "2019-01-07T20:46:22.545859Z",
+                "updated_at": "2020-11-06T21:53:39.643637Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/4ea74e95-fba2-44f6-ab44-ebb4f19b8e24-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "Anon500",
+                "bits_spent": 500,
+                "fragments": [
+                    {
+                        "text": "Anon500"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "anonymous-cheerer",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#8A2BE2",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "2acf0d51-7389-4c98-bcfb-52f346ee1b47",
+            "created_at": "2020-09-13T15:31:48.985Z",
+            "updated_at": "2020-09-13T15:31:48.985Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4589.285,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "yuyuyuirohasi subscribed at Tier 1. ",
+                "fragments": [
+                    {
+                        "text": "yuyuyuirohasi subscribed at Tier 1. "
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {
+                    "msg-id": "sub",
+                    "msg-param-cumulative-months": "1",
+                    "msg-param-months": "0",
+                    "msg-param-should-share-streak": "0",
+                    "msg-param-sub-plan": "1000",
+                    "msg-param-sub-plan-name": "Channel Subscription (delave_fps)",
+                    "msg-param-was-gifted": "false"
+                }
+            }
+        },
+        {
+            "_id": "6dacfc65-d487-4000-b9b0-08d2cc38ec60",
+            "created_at": "2020-09-13T15:34:48.007Z",
+            "updated_at": "2020-09-13T15:34:48.007Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4768.307,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ねるさんの位置どりうめぇな",
+                "fragments": [
+                    {
+                        "text": "ねるさんの位置どりうめぇな"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "d97badcc-89d0-40f0-bf90-d1dcdb8456ae",
+            "created_at": "2020-09-13T15:36:27.597Z",
+            "updated_at": "2020-09-13T15:36:27.597Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 4867.897,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ﾅｲｽｩ",
+                "fragments": [
+                    {
+                        "text": "ﾅｲｽｩ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "73221e4f-f48a-44aa-828f-5900b17f540f",
+            "created_at": "2020-09-13T15:39:19.545Z",
+            "updated_at": "2020-09-13T15:39:19.545Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5039.845,
+            "commenter": {
+                "display_name": "auber_",
+                "_id": "404053525",
+                "name": "auber_",
+                "type": "user",
+                "bio": null,
+                "created_at": "2018-12-24T17:30:21.899466Z",
+                "updated_at": "2020-11-06T14:14:42.049901Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/75305d54-c7cc-40d1-bb9c-91fbe85943c7-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "すご",
+                "fragments": [
+                    {
+                        "text": "すご"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "bits-charity",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "63f4af5a-99b2-43de-a78a-412f46436ea4",
+            "created_at": "2020-09-13T15:39:39.51Z",
+            "updated_at": "2020-09-13T15:39:39.51Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5059.81,
+            "commenter": {
+                "display_name": "mentai_baka_tikuwa",
+                "_id": "174236999",
+                "name": "mentai_baka_tikuwa",
+                "type": "user",
+                "bio": null,
+                "created_at": "2017-09-15T09:19:32.685501Z",
+                "updated_at": "2020-10-28T19:44:42.887524Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/215b7342-def9-11e9-9a66-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ｷｭｰﾁｬﾝ！？？",
+                "fragments": [
+                    {
+                        "text": "ｷｭｰﾁｬﾝ！？？"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "6"
+                    },
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_color": "#2E8B57",
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "148cb586-ccdf-47d2-a820-5c66e1f78768",
+            "created_at": "2020-09-13T15:40:48.532Z",
+            "updated_at": "2020-09-13T15:40:48.532Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5128.832,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ねるさんのトレーナー見てて気持ち良い",
+                "fragments": [
+                    {
+                        "text": "ねるさんのトレーナー見てて気持ち良い"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "6b788394-1f30-4256-93ef-bddad32bf48c",
+            "created_at": "2020-09-13T15:45:39.496Z",
+            "updated_at": "2020-09-13T15:45:39.496Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5419.796,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "楽しそうでうれしいぜ",
+                "fragments": [
+                    {
+                        "text": "楽しそうでうれしいぜ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "163ab236-a24e-4578-9f9b-bd05ae02812d",
+            "created_at": "2020-09-13T15:45:56.51Z",
+            "updated_at": "2020-09-13T15:45:56.51Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5436.81,
+            "commenter": {
+                "display_name": "delave_fps",
+                "_id": "109776767",
+                "name": "delave_fps",
+                "type": "user",
+                "bio": "Professionalgamer in JP",
+                "created_at": "2015-12-18T15:54:54.829912Z",
+                "updated_at": "2020-11-06T21:09:53.38852Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/delave_fps-profile_image-0d328390d9999825-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "delaveThumbsup delaveThumbsup delaveThumbsup",
+                "emoticons": [
+                    {
+                        "_id": "782544",
+                        "begin": 0,
+                        "end": 13
+                    },
+                    {
+                        "_id": "782544",
+                        "begin": 15,
+                        "end": 28
+                    },
+                    {
+                        "_id": "782544",
+                        "begin": 30,
+                        "end": 43
+                    }
+                ],
+                "fragments": [
+                    {
+                        "text": "delaveThumbsup",
+                        "emoticon": {
+                            "emoticon_id": "782544",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "delaveThumbsup",
+                        "emoticon": {
+                            "emoticon_id": "782544",
+                            "emoticon_set_id": ""
+                        }
+                    },
+                    {
+                        "text": " "
+                    },
+                    {
+                        "text": "delaveThumbsup",
+                        "emoticon": {
+                            "emoticon_id": "782544",
+                            "emoticon_set_id": ""
+                        }
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "broadcaster",
+                        "version": "1"
+                    },
+                    {
+                        "_id": "subscriber",
+                        "version": "3006"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "7334d678-5e05-485a-be97-0ad51eefc22b",
+            "created_at": "2020-09-13T15:46:08.009Z",
+            "updated_at": "2020-09-13T15:46:08.009Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5448.309,
+            "commenter": {
+                "display_name": "black_nobu",
+                "_id": "481297563",
+                "name": "black_nobu",
+                "type": "user",
+                "bio": null,
+                "created_at": "2019-12-31T11:31:44.889492Z",
+                "updated_at": "2020-09-20T14:21:36.116905Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/cdd517fe-def4-11e9-948e-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "LUL",
+                "emoticons": [
+                    {
+                        "_id": "425618",
+                        "begin": 0,
+                        "end": 2
+                    }
+                ],
+                "fragments": [
+                    {
+                        "text": "LUL",
+                        "emoticon": {
+                            "emoticon_id": "425618",
+                            "emoticon_set_id": ""
+                        }
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "0821c528-e95e-4283-844d-f060083010f6",
+            "created_at": "2020-09-13T15:46:27.209Z",
+            "updated_at": "2020-09-13T15:46:27.209Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5467.509,
+            "commenter": {
+                "display_name": "kronos2323",
+                "_id": "582790432",
+                "name": "kronos2323",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-13T15:43:59.787639Z",
+                "updated_at": "2020-11-02T00:06:24.505816Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/998f01ae-def8-11e9-b95c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "懐かしいこのチームが一番好きだった",
+                "fragments": [
+                    {
+                        "text": "懐かしいこのチームが一番好きだった"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "744b46b1-1619-40b5-9194-7425678f140f",
+            "created_at": "2020-09-13T15:46:35.257Z",
+            "updated_at": "2020-09-13T15:46:35.257Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5475.557,
+            "commenter": {
+                "display_name": "jjsjsjhshs",
+                "_id": "493647770",
+                "name": "jjsjsjhshs",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-02-19T20:22:30.021412Z",
+                "updated_at": "2020-10-18T12:51:00.907614Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/75305d54-c7cc-40d1-bb9c-91fbe85943c7-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "今更だけど何でネルさんって言われてんの？",
+                "fragments": [
+                    {
+                        "text": "今更だけど何でネルさんって言われてんの？"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "67b1877e-2f72-4968-ab53-b8e11a3e9ac7",
+            "created_at": "2020-09-13T15:47:37.325Z",
+            "updated_at": "2020-09-13T15:47:37.325Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5537.625,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "フルメンバーまじでまた見たい…",
+                "fragments": [
+                    {
+                        "text": "フルメンバーまじでまた見たい…"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "ff6c4de4-c72d-40de-9052-791d62aa1edf",
+            "created_at": "2020-09-13T15:50:09.516Z",
+            "updated_at": "2020-09-13T15:50:09.516Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5689.816,
+            "commenter": {
+                "display_name": "tyanpontannpon",
+                "_id": "469191114",
+                "name": "tyanpontannpon",
+                "type": "user",
+                "bio": null,
+                "created_at": "2019-10-26T09:47:47.719846Z",
+                "updated_at": "2020-11-04T03:48:43.241573Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/294c98b5-e34d-42cd-a8f0-140b72fba9b0-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "美味すぎる",
+                "fragments": [
+                    {
+                        "text": "美味すぎる"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "d29dda4f-2e78-4be4-8838-5eadc8cee016",
+            "created_at": "2020-09-13T15:51:57.002Z",
+            "updated_at": "2020-09-13T15:51:57.002Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5797.302,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "宇宙って呼んどるのウケる",
+                "fragments": [
+                    {
+                        "text": "宇宙って呼んどるのウケる"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "c14812db-946d-4a4a-931c-6a2ff141ba68",
+            "created_at": "2020-09-13T15:52:47.744Z",
+            "updated_at": "2020-09-13T15:52:47.744Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5848.044,
+            "commenter": {
+                "display_name": "kronos2323",
+                "_id": "582790432",
+                "name": "kronos2323",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-13T15:43:59.787639Z",
+                "updated_at": "2020-11-02T00:06:24.505816Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/998f01ae-def8-11e9-b95c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "ねるさん全然衰えてないっすね",
+                "fragments": [
+                    {
+                        "text": "ねるさん全然衰えてないっすね"
+                    }
+                ],
+                "is_action": false,
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "59573a34-88c3-4e48-a4e1-79306ecdcf84",
+            "created_at": "2020-09-13T15:52:48.623Z",
+            "updated_at": "2020-09-13T15:52:48.623Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5848.923,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "普通にめちゃくちゃうますぎて",
+                "fragments": [
+                    {
+                        "text": "普通にめちゃくちゃうますぎて"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "22b5f858-786a-44d4-99e0-066f13490f39",
+            "created_at": "2020-09-13T15:53:47.941Z",
+            "updated_at": "2020-09-13T15:53:47.941Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5908.241,
+            "commenter": {
+                "display_name": "yuyuyuirohasi",
+                "_id": "581552387",
+                "name": "yuyuyuirohasi",
+                "type": "user",
+                "bio": null,
+                "created_at": "2020-09-10T11:17:40.274031Z",
+                "updated_at": "2020-09-20T22:19:02.531093Z",
+                "logo": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "新幹線スピードの秘訣は押すことよ",
+                "fragments": [
+                    {
+                        "text": "新幹線スピードの秘訣は押すことよ"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "0"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "aa2ad77a-23f0-42b4-ae44-09d3d12659be",
+            "created_at": "2020-09-13T15:53:55.536Z",
+            "updated_at": "2020-09-13T15:53:55.536Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 5915.836,
+            "commenter": {
+                "display_name": "irony555",
+                "_id": "184051333",
+                "name": "irony555",
+                "type": "user",
+                "bio": null,
+                "created_at": "2017-12-02T10:46:23.166226Z",
+                "updated_at": "2020-09-08T10:14:44.455163Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/f498178a-4904-495b-a754-5784b5b0310d-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "もしかしてランクいける？？",
+                "fragments": [
+                    {
+                        "text": "もしかしてランクいける？？"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "premium",
+                        "version": "1"
+                    }
+                ],
+                "user_notice_params": {}
+            }
+        },
+        {
+            "_id": "487ffde5-86da-4520-b834-835baede4dfa",
+            "created_at": "2020-09-13T16:02:34.652Z",
+            "updated_at": "2020-09-13T16:02:34.652Z",
+            "channel_id": "109776767",
+            "content_type": "video",
+            "content_id": "739949384",
+            "content_offset_seconds": 6434.952,
+            "commenter": {
+                "display_name": "OoyukkioO",
+                "_id": "167580341",
+                "name": "ooyukkioo",
+                "type": "user",
+                "bio": "ゆっきですPUBGとLOLが好きですでも、デトネーターはもっっっと好きです",
+                "created_at": "2017-07-31T08:20:33.052608Z",
+                "updated_at": "2020-10-13T15:10:51.933173Z",
+                "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/3596b697-3189-4cb1-9ed4-24bc427972d2-profile_image-300x300.png"
+            },
+            "source": "chat",
+            "state": "published",
+            "message": {
+                "body": "お！OWやってる～～～～！",
+                "fragments": [
+                    {
+                        "text": "お！OWやってる～～～～！"
+                    }
+                ],
+                "is_action": false,
+                "user_badges": [
+                    {
+                        "_id": "subscriber",
+                        "version": "6"
+                    },
+                    {
+                        "_id": "bits",
+                        "version": "100"
+                    }
+                ],
+                "user_color": "#FF69B4",
+                "user_notice_params": {}
+            }
+        }
+    ],
+    "_next": "eyJpZCI6IjQ4N2ZmZGU1LTg2ZGEtNDUyMC1iODM0LTgzNWJhZWRlNGRmYSIsImhrIjoiYnJvYWRjYXN0OjM5NjY3ODQ3MzI2Iiwic2siOiJBQUFGMmtFSE1nQVdOR05PRmc0X0FBIn0f"
+}

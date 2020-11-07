@@ -83,5 +83,5 @@ class TwitchVideo:
             return video_info
  
     
-    def get_comments(self):
+    def get_comment_data(self):
         return 'dict'
