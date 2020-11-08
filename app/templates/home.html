@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <title>VisuaLive</title>
-</head>
-
-<body>
-    <h1> VisuaLive</h1>
-
+{% extends 'base.html' %}
+{% block content %}
     <form action="/grapht" method="post">
         <p>
             動画URL：<input type="text" name="url" size="40">
@@ -17,6 +8,4 @@
             <input type="submit" value="送信">
         </p>
     </form>
-</body>
-
-</html>
+{% endblock %}
