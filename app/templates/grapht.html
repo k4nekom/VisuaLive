@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action="/grapht" method="post">
-    <p>
-        動画URL：<input type="text" name="url" size="40">
-    </p>
-    <p>
-        <input type="submit" value="送信">
-    </p>
-</form>
+<h2><a href="{{ video_info['url'] }}" target="_blank">{{ video_info['title'] }}</a></h2>
+
+<table>
+    <tr>
+        <td>配信者</td>
+        <td><a href="https://www.twitch.tv/{{ video_info['user_name'] }}"target="_blank">
+            {{ video_info['user_name'] }}
+        </a></td>
+    </tr>
+    <tr>
+        <td>配信日</td>
+        <td>{{ video_info['created_at'][0:10] }}</td>
+    </tr>
+    <tr>
+        <td>配信時間</td>
+        <td>{{ video_info['duration_minutes'] }}分</td>
+    </tr>
+</table>
 
 <div id="chartPlace">
     <!-- グラフが挿入される -->

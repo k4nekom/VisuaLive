@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form action="/grapht" method="post">
-        <p>
-            動画URL：<input type="text" name="url" size="40">
-        </p>
-        <p>
-            <input type="submit" value="送信">
-        </p>
-    </form>
+
+<p>https://www.twitch.tv/videos/739949384</p>
+
+<form action="/grapht" method="post">
+    <p>
+        動画URL：<input type="text" name="url" size="40">
+    </p>
+    <p>
+        <input type="submit" value="送信">
+    </p>
+</form>
 {% endblock %}
