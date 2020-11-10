@@ -3,13 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>VisuaLive</title>
+    <title>TwitChart</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">　TwitChart</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="https://www.twitch.tv/" target="_blank">Twitchで動画を探す</a></li>
+          </ul>
+        </div>
+      </nav>
     <div class='container'>
-        <h1> VisuaLive</h1>
-
         {% block content %}
         {% endblock %}
     </div>

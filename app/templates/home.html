@@ -1,14 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<p>https://www.twitch.tv/videos/739949384</p>
+<p>動画URLを入力して作成ボタンを押すと、グラフが作成されます。</p>
 
 <form action="/grapht" method="post">
     <p>
-        動画URL：<input type="text" name="url" size="40">
+        <label for="url">動画URL</label>
+        <input placeholder="例　https://www.twitch.tv/videos/739949384" id="url" name="url"　type="text" class="validate">
     </p>
     <p>
-        <input type="submit" value="送信">
+        <input type="submit" value="グラフ作成" class="waves-effect waves-light btn">
     </p>
 </form>
+
+<details>
+    <summary>デモ用動画URL</summary>
+    <div class="row">
+        <div class="col s6"><input id="copyTarget" type="text" value="https://www.twitch.tv/videos/739949384" readonly></div>
+        <div class="col s4"><button onclick="copyToClipboard()" class="waves-effect waves-light btn">クリップボードにコピー</button></div>
+    </div>
+</details>
+
+<!-- bodyタグ内の下部に以下を入力する -->
+<script>
+    function copyToClipboard() {
+        // コピー対象をJavaScript上で変数として定義する
+        var copyTarget = document.getElementById("copyTarget");
+
+        // コピー対象のテキストを選択する
+        copyTarget.select();
+
+        // 選択しているテキストをクリップボードにコピーする
+        document.execCommand("Copy");
+
+        // コピーをお知らせする
+        alert("デモ用URLをクリップボードにコピーしました");
+    }
+</script>
 {% endblock %}
