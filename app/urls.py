@@ -1,8 +1,14 @@
+from pathlib import Path
+
 import responder
 
 from external.twitch import TwitchVideo
 
-api = responder.API()
+BASE_DIR = Path(__file__).parent
+
+api = responder.API(
+    static_dir=str(BASE_DIR.joinpath('static')),
+)
 
 @api.route("/")
 def home(req, resp):
