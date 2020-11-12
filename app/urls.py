@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 import responder
@@ -12,11 +13,14 @@ api = responder.API(
 
 @api.route("/")
 def home(req, resp):
-    resp.html = api.template('home.html')
+    resp.html = api.template('home.html', error_message=None)
 
 @api.route("/grapht")
 async def grapth(req, resp):
     # todo urlが正しいかどうかのチェック
     request = await req.media()
-    video = TwitchVideo(request['url'])
-    resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
+    if re.fullmatch('https://www.twitch.tv/videos/\d{9}', request['url']) == None:
+        resp.html = api.template('home.html', error_message='動画のURLが無効です')
+    else:
+        video = TwitchVideo(request['url'])
+        resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())

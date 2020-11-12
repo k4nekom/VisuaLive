@@ -2,7 +2,11 @@
 {% block content %}
 
 <div class='urlForm'>
-    <p>動画URLを入力して、グラフを作成！</p>
+    {% if error_message == None %}
+        <p>動画URLを入力して、グラフを作成！</p>
+    {% else %}
+        <div class="errorMessage">{{ error_message }}</div>
+    {% endif %}
     <form action="/grapht" method="post">
         <div class="row">
             <div class="col s9">
