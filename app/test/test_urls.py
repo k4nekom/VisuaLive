@@ -44,7 +44,7 @@ def test_grapht(api_fixture, mocker):
     params = json.dumps({
         'url': 'https://www.twitch.tv/videos/739949384'
     })
-    r = api.requests.post('/grapht', params)
+    r = api.requests.post('/', params)
     assert r.status_code == 200
 
 @pytest.mark.parametrize(
@@ -59,5 +59,5 @@ def test_grapht_post_with_invalid_url(api_fixture, mocker, url):
     params = json.dumps({
         'url': url
     })
-    r = api.requests.post('/grapht', params)
+    r = api.requests.post('/', params)
     assert r.status_code == 200
