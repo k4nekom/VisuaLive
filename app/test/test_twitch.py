@@ -6,6 +6,7 @@ import pytest
 
 sys.path.append('../')
 from external.twitch import TwitchVideo
+from exception import VideoNotFoundError
 
 os.chdir('../')
 
@@ -85,6 +86,17 @@ class TestTwitch:
         assert 'url' in video_info
         assert 'duration_minutes' in video_info
         assert type(video_info['duration_minutes']) is int
+
+
+    # 動画が削除、公開終了していた場合のテスト
+    def test_get_info_video_not_fount(self, mocker, video):
+        res_mock = mocker.Mock()
+        res_mock.status_code = 404
+        res_mock.text = '{"error": "Not Found", "status": 404, "message": "vods not found"}'
+        mocker.patch('requests.get').return_value = res_mock
+
+        with pytest.raises(VideoNotFoundError):
+            video.get_info()
 
 
     def test_get_token(self, mocker, video):

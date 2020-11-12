@@ -2,6 +2,8 @@ import json
 import re
 import requests
 
+from exception import VideoNotFoundError
+
 class TwitchVideo:
     def __init__(self, url):
         m = re.search('[0-9]{9}', url)
@@ -38,6 +40,7 @@ class TwitchVideo:
         self.app_access_token = res_text_dict['access_token']
 
 
+    # このメソッドは例外投げます
     def get_info(self):
         url = 'https://api.twitch.tv/helix/videos?id=' + self.video_id
         headers = {
@@ -46,41 +49,30 @@ class TwitchVideo:
         }
         res = requests.get(url, headers=headers)
 
-        if res.status_code == 200:
-            res_text_dict = json.loads(res.text)
-            # 取得したdurationの単位を「分」に直す
-            duration_list = re.split('h|m|s', res_text_dict['data'][0]['duration'])
-            duration_minutes = int(duration_list[0]) * 60 + int(duration_list[1]) + 1
-            video_info = {
-                'user_name': res_text_dict['data'][0]['user_name'],
-                'title': res_text_dict['data'][0]['title'],
-                'created_at': res_text_dict['data'][0]['created_at'],
-                'url': res_text_dict['data'][0]['url'],
-                'duration_minutes': duration_minutes
-            }
-            return video_info
-        elif res.status_code == 401: # トークンの期限が切れていた場合の処理
-            # トークンを再取得する
+        if res.status_code == 401: # トークンの期限が切れていた場合、トークンを作り直し、再度リクエスト
             self._get_token()
-
             headers = {
                 'Authorization': 'Bearer ' + self.app_access_token,
                 'Client-Id': self.client_id
             }
             res = requests.get(url, headers=headers)
-            res_text_dict = json.loads(res.text)
-            # 取得したdurationの単位を「分」に直す
-            duration_list = re.split('h|m|s', res_text_dict['data'][0]['duration'])
-            duration_minutes = int(duration_list[0]) * 60 + int(duration_list[1]) + 1
-            video_info = {
-                'user_name': res_text_dict['data'][0]['user_name'],
-                'title': res_text_dict['data'][0]['title'],
-                'created_at': res_text_dict['data'][0]['created_at'],
-                'url': res_text_dict['data'][0]['url'],
-                'duration_minutes': duration_minutes
-            }
-            return video_info
- 
+
+        if res.status_code !=200: # トークン再取得してもエラーの場合、例外を投げる
+            raise(VideoNotFoundError('動画が公開期限切れ or 削除済'))
+
+        res_text_dict = json.loads(res.text)
+        # 取得したdurationの単位を「分」に直す
+        duration_list = re.split('h|m|s', res_text_dict['data'][0]['duration'])
+        duration_minutes = int(duration_list[0]) * 60 + int(duration_list[1]) + 1
+        video_info = {
+            'user_name': res_text_dict['data'][0]['user_name'],
+            'title': res_text_dict['data'][0]['title'],
+            'created_at': res_text_dict['data'][0]['created_at'],
+            'url': res_text_dict['data'][0]['url'],
+            'duration_minutes': duration_minutes
+        }
+        return video_info
+            
     
     def get_comment_data(self):
         info = self.get_info()

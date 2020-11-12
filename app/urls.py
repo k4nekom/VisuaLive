@@ -3,6 +3,7 @@ from pathlib import Path
 
 import responder
 
+from exception import VideoNotFoundError
 from external.twitch import TwitchVideo
 
 BASE_DIR = Path(__file__).parent
@@ -21,4 +22,8 @@ async def root(req, resp):
             resp.html = api.template('home.html', error_message='動画のURLが無効です')
         else:
             video = TwitchVideo(request['url'])
-            resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
+            try:    
+                resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
+            except VideoNotFoundError as e:
+                print('catch VideoNotFoundError:', e)
+                resp.html = api.template('home.html', error_message='動画のURLが無効です')
