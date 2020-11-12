@@ -6,8 +6,14 @@
     <form action="/grapht" method="post">
         <div class="row">
             <div class="col s9">
-                <input placeholder="例　https://www.twitch.tv/videos/123456789" id="url" name="url" type="text"
-                    class="validate">
+                <input 
+                    placeholder="例　https://www.twitch.tv/videos/123456789" 
+                    id="url" 
+                    name="url" 
+                    type="text"
+                    class="validate"
+                    required pattern="https://www.twitch.tv/videos/\d{9}"
+                >
             </div>
             <div class="col s3"><button type="submit" class="waves-effect waves-light btn">グラフ作成</button></div>
         </div>
