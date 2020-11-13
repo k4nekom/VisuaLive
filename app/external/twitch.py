@@ -2,9 +2,10 @@ import json
 import re
 import requests
 
+from external.video import Video
 from exception import VideoNotFoundError
 
-class TwitchVideo:
+class TwitchVideo(Video):
     def __init__(self, url):
         m = re.search('[0-9]{9}', url)
         self.video_id = m.group()
@@ -112,7 +113,4 @@ class TwitchVideo:
             'comment_count': comment_count,
             'w_count': w_count
         }
-
-        print(comments_data)
-                
         return comments_data

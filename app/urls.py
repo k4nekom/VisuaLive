@@ -5,6 +5,7 @@ import responder
 
 from exception import VideoNotFoundError
 from external.twitch import TwitchVideo
+from external.twitch_demo import TwitchVideoDemo
 
 BASE_DIR = Path(__file__).parent
 
@@ -14,12 +15,20 @@ api = responder.API(
 
 @api.route("/")
 async def root(req, resp):
+
     if req.method == 'get':
         resp.html = api.template('home.html', error_message=None)
+
     elif req.method == 'post':
         request = await req.media()
-        if re.fullmatch('https://www.twitch.tv/videos/\d{9}', request['url']) == None:
+
+        if request['url'] == 'https://www.twitch.tv/videos/788601557':
+            video = TwitchVideoDemo()
+            resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
+
+        elif re.fullmatch('https://www.twitch.tv/videos/\d{9}', request['url']) == None:
             resp.html = api.template('home.html', error_message='動画のURLが無効です')
+        
         else:
             video = TwitchVideo(request['url'])
             try:    
