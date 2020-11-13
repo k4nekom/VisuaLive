@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td>配信時間</td>
-            <td>{{ video_info['duration_minutes'] }}分</td>
+            <td>{{ video_info['duration_minutes'] // 60 }}h {{ video_info['duration_minutes'] % 60 }}m</td>
         </tr>
     </table>
 </div>
@@ -35,12 +35,14 @@
     let label = [];
     for (let i = 0; i < data_length; i++) {
         let hour = Math.floor(i / 60);
+        if (hour < 10) {
+            hour = '0' + hour;
+        }
         let minute = i % 60;
         if (minute < 10) {
-            label.push(hour + ':0' + minute);
-        } else {
-            label.push(hour + ':' + minute);
+            minute = '0' + minute;
         }
+        label.push(hour + ':' + minute + ':00');   
     }
 
     console.log(label)
@@ -78,7 +80,7 @@
                 title: {
                     display: true,
                     fontSize: 20,
-                    text: i * 60 + '分〜' + (i + 1) * 60 + '分'
+                    text: i != loopCount - 1 ? label[i * 60] + ' 〜 ' + label[(i + 1) * 60] : label[i * 60] + ' 〜 '
                 },
                 layout: {
                     padding: {
