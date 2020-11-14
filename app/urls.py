@@ -14,25 +14,23 @@ api = responder.API(
 )
 
 @api.route("/")
-async def root(req, resp):
-
-    if req.method == 'get':
+class root:
+    async def on_get(self, req, resp):
         resp.html = api.template('home.html', error_message=None)
 
-    elif req.method == 'post':
+    async def on_post(self, req, resp):
         request = await req.media()
 
         if request['url'] == 'https://www.twitch.tv/videos/788601557':
             video = TwitchVideoDemo()
-            resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
-
-        elif re.fullmatch('https://www.twitch.tv/videos/\d{9}', request['url']) == None:
-            resp.html = api.template('home.html', error_message='動画のURLが無効です')
-        
-        else:
+        elif re.fullmatch('https://www.twitch.tv/videos/\d{9}', request['url']) != None:
             video = TwitchVideo(request['url'])
-            try:    
-                resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
-            except VideoNotFoundError as e:
-                print('catch VideoNotFoundError:', e)
-                resp.html = api.template('home.html', error_message='動画のURLが無効です')
+        else:
+            resp.html = api.template('home.html', error_message='動画のURLが無効です')
+            return
+            
+        try:    
+            resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
+        except VideoNotFoundError as e:
+            print('catch VideoNotFoundError:', e)
+            resp.html = api.template('home.html', error_message='動画のURLが無効です')
