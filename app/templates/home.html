@@ -7,9 +7,9 @@
     {% endif %}
     <form action="/" method="post">
         <div class="row">
-            <div class="col s9">
+            <div class="input-field col s9">
+                <label for="url">ex. https://www.twitch.tv/videos/123456789</label>
                 <input 
-                    placeholder="ex. https://www.twitch.tv/videos/123456789" 
                     id="url" 
                     name="url" 
                     type="text"
@@ -17,7 +17,9 @@
                     required pattern="https://www.twitch.tv/videos/\d{9}"
                 >
             </div>
-            <div class="col s3"><button type="submit" class="waves-effect waves-light btn">グラフ作成</button></div>
+            <div class="col s3">
+                <button type="submit" class="waves-effect waves-light btn urlButton">グラフ作成</button>
+            </div>
         </div>
     </form>
     <details>
