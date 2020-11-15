@@ -1,14 +1,9 @@
-import os
-import sys
 import json
 
 import pytest
 
-sys.path.append('../')
 from external.twitch import TwitchVideo
 from exception import VideoNotFoundError
-
-os.chdir('../')
 
 @pytest.fixture()
 def video():

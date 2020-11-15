@@ -1,12 +1,6 @@
-import os
-import sys
-
 import pytest
 
-sys.path.append('../')
 from external.twitch_demo import TwitchVideoDemo
-
-os.chdir('../')
 
 @pytest.fixture()
 def video():

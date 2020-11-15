@@ -1,13 +1,8 @@
-import os
-import sys
 import json
 
 import pytest
 
-sys.path.append('../')
 from urls import api
-
-os.chdir('../')
 
 @pytest.fixture()
 def api_fixture():
@@ -61,9 +56,4 @@ def test_root_post_with_invalid_url(api_fixture, mocker, url):
         'url': url
     })
     r = api.requests.post('/', params)
-    assert r.status_code == 200
-
-
-def test_help(api_fixture):
-    r = api.requests.get('/help')
     assert r.status_code == 200
