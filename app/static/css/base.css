@@ -6,7 +6,8 @@
 }
 
 .urlForm {
-    margin-top: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -40,4 +41,18 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+/* help.html */
+.help {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.help img{
+    max-width: 650px;
+    height: auto;
+    margin-bottom: 20px;
 }

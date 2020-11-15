@@ -2,16 +2,14 @@
 {% block content %}
 
 <div class='urlForm'>
-    {% if error_message == None %}
-        <p>動画URLを入力して、グラフを作成！</p>
-    {% else %}
+    {% if error_message != None %}
         <div class="errorMessage">{{ error_message }}</div>
     {% endif %}
     <form action="/" method="post">
         <div class="row">
             <div class="col s9">
                 <input 
-                    placeholder="例　https://www.twitch.tv/videos/123456789" 
+                    placeholder="ex. https://www.twitch.tv/videos/123456789" 
                     id="url" 
                     name="url" 
                     type="text"
@@ -35,6 +33,19 @@
             </div>
         </div>
     </details>
+</div>
+
+<div class="help">
+    <h5>使い方</h5>
+
+    <p>1. <a href="https://www.twitch.tv/" target="_blank">Twitch</a>で動画URLを取得</p>
+    <img src="/static/image/twitch_video.png" alt="Twitchの動画の写真" title="Twitchの動画">
+
+    <p>2.  取得したURLを入力して「グラフ作成」をクリック</p>
+    <img src="/static/image/url_input.png" alt="URL入力蘭の写真" title="URL入力蘭">
+
+    <p>3. グラフを見る</p>
+    <img src="/static/image/grapth.png" alt="グラフの写真" title="グラフ">
 </div>
 
 

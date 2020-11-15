@@ -28,9 +28,14 @@ class root:
         else:
             resp.html = api.template('home.html', error_message='動画のURLが無効です')
             return
-            
+
         try:    
             resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
         except VideoNotFoundError as e:
             print('catch VideoNotFoundError:', e)
             resp.html = api.template('home.html', error_message='動画のURLが無効です')
+
+
+@api.route("/help")
+def help(req, resp):
+    resp.html = api.template('help.html')

@@ -62,3 +62,8 @@ def test_root_post_with_invalid_url(api_fixture, mocker, url):
     })
     r = api.requests.post('/', params)
     assert r.status_code == 200
+
+
+def test_help(api_fixture):
+    r = api.requests.get('/help')
+    assert r.status_code == 200
