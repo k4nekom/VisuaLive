@@ -1,0 +1,59 @@
+{
+    "kind": "youtube#videoListResponse",
+    "etag": "08iKmFgiQL2IsczFVM3nUgxbxuU",
+    "items": [
+        {
+            "kind": "youtube#video",
+            "etag": "m829IaRcQ6Cg9PePsFcN8EvYsZI",
+            "id": "iOavpCRbq-k",
+            "snippet": {
+                "publishedAt": "2018-07-15T07:57:51Z",
+                "channelId": "UC3lNFeJiTq6L3UWoz4g1e-A",
+                "title": "【NOSTALGIC TRAIN】日本の夏の田舎を歩き回る（負荷テスト＋だらだら雑談）",
+                "description": "えっっっっっっっっっも\n\nhttps://twitter.com/udukikohh",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/iOavpCRbq-k/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/iOavpCRbq-k/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/iOavpCRbq-k/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "卯月コウ",
+                "tags": [
+                    "UC3lNFeJiTq6L3UWoz4g1e-A",
+                    "にじさんじプロジェクト",
+                    "バーチャルライバー"
+                ],
+                "categoryId": "20",
+                "liveBroadcastContent": "none",
+                "localized": {
+                    "title": "【NOSTALGIC TRAIN】日本の夏の田舎を歩き回る（負荷テスト＋だらだら雑談）",
+                    "description": "えっっっっっっっっっも\n\nhttps://twitter.com/udukikohh"
+                }
+            },
+            "contentDetails": {
+                "duration": "PT1H17M17S",
+                "dimension": "2d",
+                "definition": "sd",
+                "caption": "false",
+                "licensedContent": true,
+                "contentRating": {},
+                "projection": "rectangular"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 1
+    }
+}
