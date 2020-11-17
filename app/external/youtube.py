@@ -20,8 +20,8 @@ class LiveChatReplayDisabled(Exception):
 
 class YoutubeVideo(Video):
     def __init__(self, url):
-        m = re.search('[0-9]{9}', url)
-        self.video_id = 'ddd'
+        m = re.search('[0-9A-Za-z-_]{11}', url)
+        self.video_id = m.group()
 
         with open('config/config.json', 'r') as f:
             config = json.load(f)
@@ -30,40 +30,34 @@ class YoutubeVideo(Video):
 
     # このメソッドは例外投げます
     def get_info(self):
-        return None
-    #     url = 'https://api.twitch.tv/helix/videos?id=' + self.video_id
-    #     headers = {
-    #         'Authorization': 'Bearer ' + self.app_access_token,
-    #         'Client-Id': self.client_id
-    #     }
-    #     res = requests.get(url, headers=headers)
+        url = 'https://www.googleapis.com/youtube/v3/videos'\
+              '?id=' + self.video_id + \
+              '&key=' + self.api_key + \
+              '&part=snippet,contentDetails'
+        res = requests.get(url)
 
-    #     if res.status_code == 401: # トークンの期限が切れていた場合、トークンを作り直し、再度リクエスト
-    #         self._get_token()
-    #         headers = {
-    #             'Authorization': 'Bearer ' + self.app_access_token,
-    #             'Client-Id': self.client_id
-    #         }
-    #         res = requests.get(url, headers=headers)
+        if res.status_code !=200:
+            raise(VideoNotFoundError('動画情報が取得できません'))
 
-    #     if res.status_code !=200: # トークン再取得してもエラーの場合、例外を投げる
-    #         raise(VideoNotFoundError('動画が公開期限切れ or 削除済'))
+        res_dict = json.loads(res.text)
 
-    #     res_text_dict = json.loads(res.text)
-    #     # 取得したdurationの単位を「分」に直す
-    #     duration_list = re.split('h|m|s', res_text_dict['data'][0]['duration'])
-    #     duration_minutes = int(duration_list[0]) * 60 + int(duration_list[1]) + 1
-    #     video_info = {
-    #         'user_name': res_text_dict['data'][0]['user_name'],
-    #         'title': res_text_dict['data'][0]['title'],
-    #         'created_at': res_text_dict['data'][0]['created_at'],
-    #         'url': res_text_dict['data'][0]['url'],
-    #         'duration_minutes': duration_minutes
-    #     }
-    #     return video_info
+        if res_dict['pageInfo']['totalResults'] == 0:
+            raise(VideoNotFoundError('動画情報が取得できません'))
+
+        # 取得したdurationの単位を「分」に直す
+        duration_list = re.findall('[0-9]{1,2}', res_dict['items'][0]['contentDetails']['duration'])
+        duration_minutes = int(duration_list[0]) * 60 + int(duration_list[1]) + 1
+        video_info = {
+            'user_name': res_dict['items'][0]['snippet']['channelTitle'],
+            'title': res_dict['items'][0]['snippet']['title'],
+            'created_at': res_dict['items'][0]['snippet']['publishedAt'],
+            'url': 'https://www.youtube.com/channel/' + res_dict['items'][0]['snippet']['tags'][0],
+            'duration_minutes': duration_minutes
+        }
+        return video_info
 
 
-    def get_ytInitialData(self, target_url, session):
+    def _get_ytInitialData(self, target_url, session):
         headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'}
         html = session.get(target_url, headers=headers)
         soup = BeautifulSoup(html.text, 'html.parser')
@@ -75,22 +69,22 @@ class YoutubeVideo(Video):
                     if 'ytInitialData' in line:
                         return(json.loads(line.strip()[len('window["ytInitialData"] = '):-1]))
 
-    def get_continuation(self, ytInitialData):
+    def _get_continuation(self, ytInitialData):
         continuation = ytInitialData['continuationContents']['liveChatContinuation']['continuations'][0].get('liveChatReplayContinuationData', {}).get('continuation')
         return(continuation)
 
-    def check_livechat_replay_disable(self, ytInitialData):
+    def _check_livechat_replay_disable(self, ytInitialData):
         conversationBarRenderer = ytInitialData['contents']['twoColumnWatchNextResults']['conversationBar'].get('conversationBarRenderer', {})
         if conversationBarRenderer:
             if conversationBarRenderer['availabilityMessage']['messageRenderer']['text']['runs'][0]['text'] == 'この動画ではチャットのリプレイを利用できません。':
                 return(True)
 
     @retry(ContinuationURLNotFound, tries=3, delay=1)
-    def get_initial_continuation(self, target_url,session):
+    def _get_initial_continuation(self, target_url,session):
 
-        ytInitialData = get_ytInitialData(target_url, session)
+        ytInitialData = self._get_ytInitialData(target_url, session)
 
-        if check_livechat_replay_disable(ytInitialData):
+        if self._check_livechat_replay_disable(ytInitialData):
             print("LiveChat Replay is disable")
             raise LiveChatReplayDisabled
 
@@ -114,7 +108,7 @@ class YoutubeVideo(Video):
 
         return(continue_url)
 
-    def convert_chatreplay(self, renderer):
+    def _convert_chatreplay(self, renderer):
         chatlog = {}
 
         chatlog['user'] = renderer['authorName']['simpleText']
@@ -147,21 +141,21 @@ class YoutubeVideo(Video):
 
         return(chatlog)
 
-    def get_chat_replay_data(self, video_id):
+    def _get_chat_replay_data(self):
         youtube_url = "https://www.youtube.com/watch?v="
-        target_url = youtube_url + video_id
+        target_url = youtube_url + self.video_id
         continuation_prefix = "https://www.youtube.com/live_chat_replay?continuation="
         result = []
         session = requests.Session()
         continuation = ""
 
         try:
-            continuation = get_initial_continuation(target_url, session)
+            continuation = self._get_initial_continuation(target_url, session)
         except LiveChatReplayDisabled:
-            print(video_id + " is disabled Livechat replay")
+            print(self.video_id + " is disabled Livechat replay")
             raise LiveChatReplayDisabled
         except ContinuationURLNotFound:
-            print(video_id + " can not find continuation url")
+            print(self.video_id + " can not find continuation url")
             raise ContinuationURLNotFound
         except Exception:
             print("Unexpected error:" + str(sys.exc_info()[0]))
@@ -172,7 +166,7 @@ class YoutubeVideo(Video):
                 break
 
             try:
-                ytInitialData = get_ytInitialData(continuation_prefix + continuation, session)
+                ytInitialData = self._get_ytInitialData(continuation_prefix + continuation, session)
                 if not 'actions' in ytInitialData['continuationContents']['liveChatContinuation']:
                     break
                 for action in ytInitialData['continuationContents']['liveChatContinuation']['actions']:
@@ -181,17 +175,17 @@ class YoutubeVideo(Video):
                     chatlog = {}
                     item = action['replayChatItemAction']['actions'][0]['addChatItemAction']['item']
                     if 'liveChatTextMessageRenderer' in item:
-                        chatlog = convert_chatreplay(item['liveChatTextMessageRenderer'])
+                        chatlog = self._convert_chatreplay(item['liveChatTextMessageRenderer'])
                     elif 'liveChatPaidMessageRenderer' in item:
-                        chatlog = convert_chatreplay(item['liveChatPaidMessageRenderer'])
+                        chatlog = self._convert_chatreplay(item['liveChatPaidMessageRenderer'])
 
                     if 'liveChatTextMessageRenderer' in item or 'liveChatPaidMessageRenderer' in item:
-                        chatlog['video_id'] = video_id
+                        chatlog['video_id'] = self.video_id
                         chatlog['Chat_No'] = ("%05d" % count)
                         result.append(chatlog)
                         count += 1
 
-                continuation = get_continuation(ytInitialData)
+                continuation = self._get_continuation(ytInitialData)
 
             except requests.ConnectionError:
                 print("Connection Error")
@@ -221,45 +215,37 @@ class YoutubeVideo(Video):
                 break
 
         return(result)
-            
-    
+
+
     def get_comment_data(self):
-        return None
-    #     info = self.get_info()
-    #     comment_count = [0] * (info['duration_minutes'])
-    #     w_count = [0] * (info['duration_minutes'])
-        
-    #     # 一回目のコメント取得リクエスト
-    #     url = 'https://api.twitch.tv/v5/videos/' + self.video_id + '/comments?content_offset_seconds=0'
-    #     headers = {'client-id': self.client_id}
-    #     res = requests.get(url, headers=headers)
-    #     res_dict = json.loads(res.text)
-            
-    #     for comment in res_dict['comments']:
-    #         commented_minute = int(comment['content_offset_seconds'] // 60)
-    #         comment_count[commented_minute] += 1
-    #         # コメントにwがあれば、w_countを増やす
-    #         t = comment['message']['body']
-    #         if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
-    #             w_count[commented_minute] += 1
+        comments = self._get_chat_replay_data()
+        duration_list = re.split(':', comments[-1]['time'])
+        # 配信時間が1時間未満の場合 -> 分：秒、1時間以上の場合 -> 時間：分：秒となるため場合分け
+        if len(duration_list) == 3:
+                duration_hours = int(duration_list[0]) + 1
+        else:
+                duration_hours = 1
+        comment_count = [0] * duration_hours * 60
+        w_count = [0] * duration_hours * 60
 
-    #     # 二回目以降のコメント取得リクエスト
-    #     while '_next' in res_dict:
-    #         url = 'https://api.twitch.tv/v5/videos/' + self.video_id + '/comments?cursor=' + res_dict['_next']
-    #         headers = {'client-id': self.client_id}
-    #         res = requests.get(url, headers=headers)
-    #         res_dict = json.loads(res.text)
+        for comment in comments:
+            commented_time_list = re.split(':', comment['time'])
+            # コメント時間が1時間未満の場合 -> 分：秒、1時間以上の場合 -> 時間：分：秒となるため場合分け
+            if len(commented_time_list) == 3:
+                commented_minute = int(commented_time_list[0]) * 60 + int(commented_time_list[1])
+            else:
+                if commented_time_list[0][0] == '-':
+                    continue
+                commented_minute = int(commented_time_list[0])
 
-    #         for comment in res_dict['comments']:
-    #             commented_minute = int(comment['content_offset_seconds'] // 60)
-    #             comment_count[commented_minute] += 1
-    #             # コメントにwがあれば、w_countを増やす
-    #             t = comment['message']['body']
-    #             if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
-    #                 w_count[commented_minute] += 1
+            comment_count[commented_minute] += 1
+            # コメントにwがあれば、w_countを増やす
+            t = comment['text']
+            if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
+                w_count[commented_minute] += 1
 
-    #     comments_data = {
-    #         'comment_count': comment_count,
-    #         'w_count': w_count
-    #     }
-    #     return comments_data
+        comments_data = {
+            'comment_count': comment_count,
+            'w_count': w_count
+        }
+        return comments_data
