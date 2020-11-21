@@ -51,7 +51,7 @@ class YoutubeVideo(Video):
             'user_name': res_dict['items'][0]['snippet']['channelTitle'],
             'title': res_dict['items'][0]['snippet']['title'],
             'created_at': res_dict['items'][0]['snippet']['publishedAt'],
-            'url': 'https://www.youtube.com/channel/' + res_dict['items'][0]['snippet']['tags'][0],
+            'url': 'https://www.youtube.com/channel/' + res_dict['items'][0]['snippet']['channelId'],
             'duration_minutes': duration_minutes
         }
         return video_info
@@ -222,11 +222,11 @@ class YoutubeVideo(Video):
         duration_list = re.split(':', comments[-1]['time'])
         # 配信時間が1時間未満の場合 -> 分：秒、1時間以上の場合 -> 時間：分：秒となるため場合分け
         if len(duration_list) == 3:
-                duration_hours = int(duration_list[0]) + 1
+                duration_minutes = int(duration_list[0]) * 60 + int(duration_list[1]) + 1
         else:
-                duration_hours = 1
-        comment_count = [0] * duration_hours * 60
-        w_count = [0] * duration_hours * 60
+                duration_minutes = int(duration_list[0]) + 1
+        comment_count = [0] * duration_minutes
+        w_count = [0] * duration_minutes
 
         for comment in comments:
             commented_time_list = re.split(':', comment['time'])

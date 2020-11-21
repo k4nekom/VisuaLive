@@ -3,16 +3,19 @@ import json
 import pytest
 
 from urls import api
+from external.youtube import YoutubeVideo
 
 @pytest.fixture()
 def api_fixture():
     return api
 
+
 def test_root_get(api_fixture):
     r = api.requests.get('/')
     assert r.status_code == 200
 
-def test_root_post(api_fixture, mocker):
+
+def test_root_post_twitch(api_fixture, mocker):
     # 動画情報取得のモック
     get_info_mock = mocker.Mock()
     get_info_mock.status_code = 200
@@ -42,13 +45,37 @@ def test_root_post(api_fixture, mocker):
     r = api.requests.post('/', params)
     assert r.status_code == 200
 
+
+def test_root_post_youtube(api_fixture, mocker):
+    # 動画情報取得のモック
+    res_mock = mocker.Mock()
+    res_mock.status_code = 200
+    with open('test/json/youtube_info.json') as f:
+        res_mock.text = f.read()
+    mocker.patch('requests.get').return_value = res_mock
+
+    # コメント取得のモック
+    with open('test/json/youtube_comment.json') as f:
+        comments = json.loads(f.read())
+    mocker.patch.object(YoutubeVideo, '_get_chat_replay_data', return_value = comments)
+
+    params = json.dumps({
+        'url': 'https://www.youtube.com/watch?v=iOavpCRbq-k'
+    })
+    r = api.requests.post('/', params)
+    assert r.status_code == 200
+
+
 @pytest.mark.parametrize(
     'url',
     [
         ('https://www.twitch.tv/videos/1234567890'),
         ('https://www.twitch.tv/videos/12345678'),
         ('https://www.twitch.tv/videos/12345678a'),
-        ('https://www.twitch.tv/videos/000000000')
+        ('https://www.twitch.tv/videos/000000000'),
+        ('https://www.youtube.com/watch?v=hjYmUjMaZA'),
+        ('https://www.youtube.com/watch?v=hjYmUjMaZAa'),
+        ('https://www.youtube.com/watch?v=hjYmUjMaZ@')
     ]
 )
 def test_root_post_with_invalid_url(api_fixture, mocker, url):

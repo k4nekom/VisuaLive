@@ -6,6 +6,7 @@ import responder
 from exception import VideoNotFoundError
 from external.twitch import TwitchVideo
 from external.twitch_demo import TwitchVideoDemo
+from external.youtube import YoutubeVideo
 
 BASE_DIR = Path(__file__).parent
 
@@ -25,6 +26,8 @@ class root:
             video = TwitchVideoDemo()
         elif re.fullmatch('https://www.twitch.tv/videos/\d{9}', request['url']) != None:
             video = TwitchVideo(request['url'])
+        elif re.fullmatch('https://www.youtube.com/watch\?v=[0-9A-Za-z-_]{11}', request['url']) != None:
+            video = YoutubeVideo(request['url'])
         else:
             resp.html = api.template('home.html', error_message='動画のURLが無効です')
             return
