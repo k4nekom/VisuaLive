@@ -6,7 +6,7 @@
 }
 
 .urlForm {
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 50px;
     max-width: 700px;
     margin-left: auto;
@@ -20,6 +20,19 @@
 
 .urlButton {
     margin-top: 18px;
+}
+
+.twitch_logo {
+    max-width: auto;
+    height: 80px;
+    margin-bottom: 0px;
+}
+
+.youtube_logo {
+    margin-top: 50px;
+    max-width: auto;
+    height: 45px;
+    margin-bottom: 0px;
 }
 
 /* grapth.html */

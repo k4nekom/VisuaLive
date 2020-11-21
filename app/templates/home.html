@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% if error_message != None %}
+    <div class="errorMessage">{{ error_message }}</div>
+{% endif %}
+
 <div class='urlForm'>
-    {% if error_message != None %}
-        <div class="errorMessage">{{ error_message }}</div>
-    {% endif %}
+    <a href="https://www.twitch.tv/" target="_blank">
+        <img src="/static/image/twitch_logo.jpg" alt="Twitchのロゴ" title="Twitchのロゴ" class="twitch_logo">
+    </a>
     <form action="/" method="post">
         <div class="row">
             <div class="input-field col s9">
@@ -20,8 +24,27 @@
             <div class="col s3">
                 <button type="submit" class="waves-effect waves-light btn urlButton">グラフ作成</button>
             </div>
+            <div class="col s12">
+                <details>
+                    <summary>デモ用動画URL</summary>
+                    <div class="row">
+                        <div class="col s9">
+                            <input id="copyTarget" type="text" value="https://www.twitch.tv/videos/788601557" readonly>
+                        </div>
+                        <div class="col s3">
+                            <button onclick="copyToClipboard()"class="waves-effect waves-light btn">
+                                <i class="material-icons">content_copy</i>
+                            </button>
+                        </div>
+                    </div>
+                </details>
+            </div>
         </div>
     </form>
+
+    <a href="https://www.youtube.com/" target="_blank">
+        <img src="/static/image/youtube_logo.png" alt="youtubeのロゴ" title="youtubeのロゴ" class="youtube_logo">
+    </a>
     <form action="/" method="post">
         <div class="row">
             <div class="input-field col s9">
@@ -39,25 +62,12 @@
             </div>
         </div>
     </form>
-    <details>
-        <summary>デモ用動画URL</summary>
-        <div class="row">
-            <div class="col s9">
-                <input id="copyTarget" type="text" value="https://www.twitch.tv/videos/788601557" readonly>
-            </div>
-            <div class="col s3">
-                <button onclick="copyToClipboard()"class="waves-effect waves-light btn">
-                    <i class="material-icons">content_copy</i>
-                </button>
-            </div>
-        </div>
-    </details>
 </div>
 
 <div class="help">
-    <h5>使い方</h5>
+    <h4>使い方</h4>
 
-    <p>1. <a href="https://www.twitch.tv/" target="_blank">Twitch</a>で動画URLを取得</p>
+    <p>1. 動画URLを取得</p>
     <img src="/static/image/twitch_video.png" alt="Twitchの動画の写真" title="Twitchの動画">
 
     <p>2.  取得したURLを入力して「グラフ作成」をクリック</p>
