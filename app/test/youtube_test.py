@@ -32,7 +32,7 @@ class TestYoutube:
         assert 'title' in video_info
         assert 'created_at' in video_info
         assert 'url' in video_info
-        assert video_info['url'] == 'https://www.youtube.com/channel/UC3lNFeJiTq6L3UWoz4g1e-A'
+        assert video_info['channel_url'] == 'https://www.youtube.com/channel/UC3lNFeJiTq6L3UWoz4g1e-A'
         assert 'duration_minutes' in video_info
         assert type(video_info['duration_minutes']) is int
 

@@ -51,7 +51,8 @@ class YoutubeVideo(Video):
             'user_name': res_dict['items'][0]['snippet']['channelTitle'],
             'title': res_dict['items'][0]['snippet']['title'],
             'created_at': res_dict['items'][0]['snippet']['publishedAt'],
-            'url': 'https://www.youtube.com/channel/' + res_dict['items'][0]['snippet']['channelId'],
+            'url': 'https://www.youtube.com/watch?v=' + self.video_id,
+            'channel_url': 'https://www.youtube.com/channel/' + res_dict['items'][0]['snippet']['channelId'],
             'duration_minutes': duration_minutes
         }
         return video_info

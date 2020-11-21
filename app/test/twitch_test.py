@@ -34,6 +34,7 @@ class TestTwitch:
         assert 'title' in video_info
         assert 'created_at' in video_info
         assert 'url' in video_info
+        assert 'channel_url' in video_info
         assert 'duration_minutes' in video_info
         assert type(video_info['duration_minutes']) is int
 
@@ -45,6 +46,7 @@ class TestTwitch:
     #     assert 'title' in video_info
     #     assert 'created_at' in video_info
     #     assert 'url' in video_info
+    #     assert 'channel_url' in video_info
     #     assert 'duration_minutes' in video_info
     #     assert type(video_info['duration_minutes']) is int
     # -----------------------------------------------------
@@ -79,6 +81,7 @@ class TestTwitch:
         assert 'title' in video_info
         assert 'created_at' in video_info
         assert 'url' in video_info
+        assert 'channel_url' in video_info
         assert 'duration_minutes' in video_info
         assert type(video_info['duration_minutes']) is int
 

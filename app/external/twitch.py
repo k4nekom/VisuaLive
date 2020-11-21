@@ -70,6 +70,7 @@ class TwitchVideo(Video):
             'title': res_text_dict['data'][0]['title'],
             'created_at': res_text_dict['data'][0]['created_at'],
             'url': res_text_dict['data'][0]['url'],
+            'channel_url': 'https://www.twitch.tv/' + res_text_dict['data'][0]['user_name'],
             'duration_minutes': duration_minutes
         }
         return video_info
