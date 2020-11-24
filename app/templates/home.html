@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% if error_message != None %}
-    <div class="errorMessage">{{ error_message }}</div>
-{% endif %}
 
 <div class='urlForm'>
+    {% if error_message != None %}
+        <div class="errorMessage">{{ error_message }}</div>
+    {% endif %}
+    
     <a href="https://www.twitch.tv/" target="_blank">
         <img src="/static/image/twitch_logo.jpg" alt="Twitchのロゴ" title="Twitchのロゴ" class="twitch_logo">
     </a>
