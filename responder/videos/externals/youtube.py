@@ -6,8 +6,8 @@ import sys
 from bs4 import BeautifulSoup
 from retry import retry
 
-from external.video import Video
-from exception import VideoNotFoundError
+from .video import Video
+from videos.exceptions import VideoNotFoundError
 
 
 class ContinuationURLNotFound(Exception):

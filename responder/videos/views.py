@@ -1,21 +1,13 @@
 import re
-from pathlib import Path
 
-import responder
+from apps.app import api
+from videos.exceptions import VideoNotFoundError
+from videos.externals import TwitchVideo
+from videos.externals import TwitchVideoDemo
+from videos.externals import YoutubeVideo
 
-from exception import VideoNotFoundError
-from external.twitch import TwitchVideo
-from external.twitch_demo import TwitchVideoDemo
-from external.youtube import YoutubeVideo
 
-BASE_DIR = Path(__file__).parent
-
-api = responder.API(
-    static_dir=str(BASE_DIR.joinpath('static')),
-)
-
-@api.route("/")
-class root:
+class CreateChartView:
     async def on_get(self, req, resp):
         resp.html = api.template('home.html', error_message=None)
 
@@ -37,8 +29,3 @@ class root:
         except VideoNotFoundError as e:
             print('catch VideoNotFoundError:', e)
             resp.html = api.template('home.html', error_message='動画のURLが無効です')
-
-
-@api.route("/help")
-def help(req, resp):
-    resp.html = api.template('help.html')

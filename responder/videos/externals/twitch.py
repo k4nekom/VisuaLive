@@ -2,8 +2,8 @@ import json
 import re
 import requests
 
-from external.video import Video
-from exception import VideoNotFoundError
+from .video import Video
+from videos.exceptions import VideoNotFoundError
 
 class TwitchVideo(Video):
     def __init__(self, url):

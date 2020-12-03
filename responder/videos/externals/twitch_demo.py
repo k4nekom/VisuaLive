@@ -1,6 +1,6 @@
 import json
 
-from external.video import Video
+from .video import Video
 
 class TwitchVideoDemo(Video):
     def get_info(self):
