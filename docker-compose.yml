@@ -1,9 +1,9 @@
 version: '3'
 services:
     responder:
-        build: .
+        build: ./responder
         ports:
             - "5000:5000"
         volumes: 
-            - ./app:/app
+            - ./responder:/responder
         tty: true
