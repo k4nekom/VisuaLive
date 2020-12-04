@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from external.youtube import YoutubeVideo
-from exception import VideoNotFoundError
+from videos.external import YoutubeVideo
+from videos.exceptions import VideoNotFoundError
 
 @pytest.fixture()
 def video():
@@ -12,7 +12,7 @@ def video():
 
 class TestYoutube:
     def test_init(self, video):
-        with open('config/config.json', 'r') as f:
+        with open('config/external.json', 'r') as f:
             config = json.load(f)
 
         assert video.video_id == 'iOavpCRbq-k'

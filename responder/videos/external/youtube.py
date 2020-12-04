@@ -21,7 +21,7 @@ class YoutubeVideo(Video):
         m = re.search('[0-9A-Za-z-_]{11}', url)
         self.video_id = m.group()
 
-        with open('config/config.json', 'r') as f:
+        with open('config/external.json', 'r') as f:
             config = json.load(f)
         self.api_key = config['youtube']['api_key']
 
@@ -92,8 +92,9 @@ class YoutubeVideo(Video):
             comment_count[commented_minute] += 1
             # コメントにwがあれば、w_countを増やす
             t = comment['text']
-            if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
-                w_count[commented_minute] += 1
+            if len(t) != 0:
+                if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
+                    w_count[commented_minute] += 1
 
         comments_data = {
             'comment_count': comment_count,
