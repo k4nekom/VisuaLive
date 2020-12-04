@@ -2,9 +2,9 @@ import re
 
 from apps.app import api
 from videos.exceptions import VideoNotFoundError
-from videos.externals import TwitchVideo
-from videos.externals import TwitchVideoDemo
-from videos.externals import YoutubeVideo
+from videos.external import TwitchVideo
+from videos.external import TwitchVideoDemo
+from videos.external import YoutubeVideo
 
 
 class CreateChartView:

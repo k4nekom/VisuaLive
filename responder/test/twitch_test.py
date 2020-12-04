@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from external.twitch import TwitchVideo
-from exception import VideoNotFoundError
+from videos.external import TwitchVideo
+from videos.exceptions import VideoNotFoundError
 
 @pytest.fixture()
 def video():
@@ -12,7 +12,7 @@ def video():
 
 class TestTwitch:
     def test_init(self, video):
-        with open('config/config.json', 'r') as f:
+        with open('config/external.json', 'r') as f:
             config = json.load(f)
 
         assert video.video_id == '739949384'
@@ -67,7 +67,7 @@ class TestTwitch:
         mocker.patch('requests.get').side_effect = [error_res_mock, ok_res_mock]
 
         # 新しいトークンを取得する処理のモック
-        with open('config/config.json', 'r') as f:
+        with open('config/external.json', 'r') as f:
             config = json.load(f)
         get_token_mock = mocker.Mock()
         get_token_mock.status_code = 200
@@ -98,7 +98,7 @@ class TestTwitch:
 
 
     def test_get_token(self, mocker, video):
-        with open('config/config.json', 'r') as f:
+        with open('config/external.json', 'r') as f:
             config = json.load(f)
 
         get_token_mock = mocker.Mock()
@@ -111,7 +111,7 @@ class TestTwitch:
         assert video.app_access_token == 'sample_token_for_test'
 
         # テスト用に変更したtokenを元に戻す
-        with open('config/config.json', 'w') as f:
+        with open('config/external.json', 'w') as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
         # テスト用に変更したtokenが元に戻っているか確認
         # assert video.app_access_token == config['twitch']['app_access_token']
@@ -119,7 +119,7 @@ class TestTwitch:
 
     # ------実際にtwitch apiを叩くテスト----------
     # def test_get_token_real_api(self, mocker, video):
-    #     with open('config/config.json', 'r') as f:
+    #     with open('config/external.json', 'r') as f:
     #         config = json.load(f)
 
     #     video._get_token()

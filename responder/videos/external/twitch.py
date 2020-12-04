@@ -10,7 +10,7 @@ class TwitchVideo(Video):
         m = re.search('[0-9]{9}', url)
         self.video_id = m.group()
 
-        with open('config/config.json', 'r') as f:
+        with open('config/external.json', 'r') as f:
             config = json.load(f)
 
         self.client_id = config['twitch']['client_id']
@@ -19,7 +19,7 @@ class TwitchVideo(Video):
 
 
     def _get_token(self):
-        with open('config/config.json', 'r') as f:
+        with open('config/external.json', 'r') as f:
             config = json.load(f)
 
         url = 'https://id.twitch.tv/oauth2/token'\
@@ -34,7 +34,7 @@ class TwitchVideo(Video):
         config['twitch']['app_access_token'] = res_text_dict['access_token']
 
         # configのapp_access_tokenを更新する
-        with open('config/config.json', 'w') as f:
+        with open('config/external.json', 'w') as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
 
         # インスタンス変数を更新する

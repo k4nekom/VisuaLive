@@ -1,6 +1,6 @@
 import pytest
 
-from external.twitch_demo import TwitchVideoDemo
+from videos.external import TwitchVideoDemo
 
 @pytest.fixture()
 def video():
