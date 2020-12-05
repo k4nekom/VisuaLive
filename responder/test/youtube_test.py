@@ -3,7 +3,7 @@ import json
 import pytest
 
 from videos.external import YoutubeVideo
-from videos.exceptions import VideoNotFoundError
+from videos.exceptions import VideoNotFound
 
 @pytest.fixture()
 def video():
@@ -45,7 +45,7 @@ class TestYoutube:
 
         mocker.patch('requests.get').return_value = res_mock
 
-        with pytest.raises(VideoNotFoundError):
+        with pytest.raises(VideoNotFound):
             video.get_info()
 
 

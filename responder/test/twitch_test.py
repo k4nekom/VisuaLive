@@ -3,7 +3,7 @@ import json
 import pytest
 
 from videos.external import TwitchVideo
-from videos.exceptions import VideoNotFoundError
+from videos.exceptions import VideoNotFound
 
 @pytest.fixture()
 def video():
@@ -93,7 +93,7 @@ class TestTwitch:
         res_mock.text = '{"error": "Not Found", "status": 404, "message": "vods not found"}'
         mocker.patch('requests.get').return_value = res_mock
 
-        with pytest.raises(VideoNotFoundError):
+        with pytest.raises(VideoNotFound):
             video.get_info()
 
 

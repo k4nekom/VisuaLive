@@ -3,7 +3,7 @@ import re
 import requests
 
 from .video import Video
-from videos.exceptions import VideoNotFoundError
+from videos.exceptions import VideoNotFound
 
 class TwitchVideo(Video):
     def __init__(self, url):
@@ -58,7 +58,7 @@ class TwitchVideo(Video):
             res = requests.get(url, headers=headers)
 
         if res.status_code !=200: # トークン再取得してもエラーの場合、例外を投げる
-            raise(VideoNotFoundError('動画が公開期限切れ or 削除済'))
+            raise(VideoNotFound('動画が公開期限切れ or 削除済'))
 
         res_text_dict = json.loads(res.text)
         # 取得したdurationの単位を「分」に直す

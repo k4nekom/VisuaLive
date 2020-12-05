@@ -1,7 +1,7 @@
 import re
 
 from apps.app import api, logger
-from videos.exceptions import VideoNotFoundError
+from videos.exceptions import VideoNotFound
 from videos.external import TwitchVideo, TwitchVideoDemo, YoutubeVideo
 
 
@@ -24,6 +24,6 @@ class CreateChartView:
 
         try:    
             resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
-        except VideoNotFoundError:
-            logger.warning('catch VideoNotFoundError')
+        except VideoNotFound:
+            logger.warning('catch VideoNotFound')
             resp.html = api.template('home.html', error_message='コメントの取得に失敗しました')

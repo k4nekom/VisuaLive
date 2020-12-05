@@ -8,14 +8,7 @@ from retry import retry
 
 from apps.app import logger
 from .video import Video
-from videos.exceptions import VideoNotFoundError
-
-
-class ContinuationURLNotFound(Exception):
-    pass
-
-class LiveChatReplayDisabled(Exception):
-    pass
+from videos.exceptions import VideoNotFound, LiveChatReplayDisabled, ContinuationURLNotFound
 
 class YoutubeVideo(Video):
     def __init__(self, url):
@@ -36,12 +29,12 @@ class YoutubeVideo(Video):
         res = requests.get(url)
 
         if res.status_code !=200:
-            raise(VideoNotFoundError('動画情報が取得できません'))
+            raise(VideoNotFound('動画情報が取得できません'))
 
         res_dict = json.loads(res.text)
 
         if res_dict['pageInfo']['totalResults'] == 0:
-            raise(VideoNotFoundError('動画情報が取得できません'))
+            raise(VideoNotFound('動画情報が取得できません'))
 
         # 取得したdurationの単位を「分」に直す
         duration_list = re.findall('[0-9]{1,2}', res_dict['items'][0]['contentDetails']['duration'])
@@ -62,13 +55,13 @@ class YoutubeVideo(Video):
             comments = self._get_chat_replay_data()
         except LiveChatReplayDisabled:
             logger.warning(self.video_id + " is disabled Livechat replay")
-            raise(VideoNotFoundError('動画情報が取得できません'))
+            raise(VideoNotFound('動画情報が取得できません'))
         except ContinuationURLNotFound:
             logger.warning(self.video_id + " can not find continuation url")
-            raise(VideoNotFoundError('動画情報が取得できません'))
+            raise(VideoNotFound('動画情報が取得できません'))
         except Exception:
             logger.warning("Unexpected error:" + str(sys.exc_info()[0]))
-            raise(VideoNotFoundError('動画情報が取得できません'))
+            raise(VideoNotFound('動画情報が取得できません'))
 
         duration_list = re.split(':', comments[-1]['time'])
         # 配信時間が1時間未満の場合 -> 分：秒、1時間以上の場合 -> 時間：分：秒となるため場合分け
