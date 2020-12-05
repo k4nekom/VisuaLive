@@ -3,7 +3,7 @@ from pathlib import Path
 import responder
 
 def create_app():
-    BASE_DIR = Path(__file__).resolve().parents[2]
+    BASE_DIR = Path(__file__).resolve().parents[1]
 
     api = responder.API(
         static_dir=str(BASE_DIR.joinpath('static')),
