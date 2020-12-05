@@ -28,7 +28,6 @@ class TwitchVideo(Video):
               '&grant_type=client_credentials'
 
         res = requests.post(url)
-        print(res.text)
         res_text_dict = json.loads(res.text)
 
         config['twitch']['app_access_token'] = res_text_dict['access_token']

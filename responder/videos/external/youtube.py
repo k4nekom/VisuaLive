@@ -6,6 +6,7 @@ import sys
 from bs4 import BeautifulSoup
 from retry import retry
 
+from apps.app import logger
 from .video import Video
 from videos.exceptions import VideoNotFoundError
 
@@ -60,13 +61,13 @@ class YoutubeVideo(Video):
         try:
             comments = self._get_chat_replay_data()
         except LiveChatReplayDisabled:
-            print(self.video_id + " is disabled Livechat replay")
+            logger.warning(self.video_id + " is disabled Livechat replay")
             raise(VideoNotFoundError('動画情報が取得できません'))
         except ContinuationURLNotFound:
-            print(self.video_id + " can not find continuation url")
+            logger.warning(self.video_id + " can not find continuation url")
             raise(VideoNotFoundError('動画情報が取得できません'))
         except Exception:
-            print("Unexpected error:" + str(sys.exc_info()[0]))
+            logger.warning("Unexpected error:" + str(sys.exc_info()[0]))
             raise(VideoNotFoundError('動画情報が取得できません'))
 
         duration_list = re.split(':', comments[-1]['time'])
@@ -138,30 +139,30 @@ class YoutubeVideo(Video):
                 continuation = self._get_continuation(ytInitialData)
 
             except requests.ConnectionError:
-                print("Connection Error")
+                logger.warning("Connection Error")
                 continue
             except requests.HTTPError:
-                print("HTTPError")
+                logger.warning("HTTPError")
                 break
             except requests.Timeout:
-                print("Timeout")
+                logger.warning("Timeout")
                 continue
             except requests.exceptions.RequestException as e:
-                print(e)
+                logger.warning(e)
                 break
             except KeyError as e:
-                print("KeyError")
-                print(e)
+                logger.warning("KeyError")
+                logger.warning(e)
                 break
             except SyntaxError as e:
-                print("SyntaxError")
-                print(e)
+                logger.warning("SyntaxError")
+                logger.warning(e)
                 break
             except KeyboardInterrupt:
                 break
             except Exception as e:
-                print("Unexpected error:" + str(sys.exc_info()[0]))
-                print(e)
+                logger.warning("Unexpected error:" + str(sys.exc_info()[0]))
+                logger.warning(e)
                 break
 
         return(result)
@@ -198,7 +199,7 @@ class YoutubeVideo(Video):
         ytInitialData = self._get_ytInitialData(target_url, session)
 
         if self._check_livechat_replay_disable(ytInitialData):
-            print("LiveChat Replay is disable")
+            logger.warning("LiveChat Replay is disable")
             raise LiveChatReplayDisabled
 
         continue_dict = {}

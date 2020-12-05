@@ -1,6 +1,6 @@
 import re
 
-from apps.app import api
+from apps.app import api, logger
 from videos.exceptions import VideoNotFoundError
 from videos.external import TwitchVideo, TwitchVideoDemo, YoutubeVideo
 
@@ -19,11 +19,11 @@ class CreateChartView:
         elif re.fullmatch('https://www.youtube.com/watch\?v=[0-9A-Za-z-_]{11}', request['url']) != None:
             video = YoutubeVideo(request['url'])
         else:
-            resp.html = api.template('home.html', error_message='動画のURLが無効です')
+            resp.html = api.template('home.html', error_message='コメントの取得に失敗しました')
             return
 
         try:    
             resp.html = api.template('grapht.html', video_info=video.get_info(), comment_data=video.get_comment_data())
-        except VideoNotFoundError as e:
-            print('catch VideoNotFoundError:', e)
-            resp.html = api.template('home.html', error_message='動画のURLが無効です')
+        except VideoNotFoundError:
+            logger.warning('catch VideoNotFoundError')
+            resp.html = api.template('home.html', error_message='コメントの取得に失敗しました')
