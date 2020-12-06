@@ -1,0 +1,18 @@
+{
+    "development": {
+        "url": {
+            "dialect": "mysql",
+            "driver": "mysqldb",
+            "username": "docker",
+            "password": "docker",
+            "host":"db-container",
+            "port": 3306,
+            "database": "development"
+        },
+        "engine": {
+            "pool_size": 5,
+            "max_overflow": 10,
+            "isolation_level": "READ UNCOMMITTED"
+        }
+    }
+}
