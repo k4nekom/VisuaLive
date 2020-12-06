@@ -1,3 +1,5 @@
+import json
+from logging import getLogger, config
 from pathlib import Path
 
 import responder
@@ -12,46 +14,10 @@ def create_app():
     return api
 
 def create_logger():
-    from logging import getLogger, config
+    with open('config/logging.json', 'r') as f:
+        log_conf = json.load(f)
 
-    config.dictConfig({
-        'version': 1,
-        'formatters': {
-            'customFormatter': {
-                'format': '%(asctime)s %(levelname)s - %(filename)s %(funcName)s %(lineno)d: %(message)s',
-                'datefmt': '%Y/%m/%d %H:%M:%S'
-            },
-        },
-        'handlers': {
-            'developmentHandler': {
-                'formatter': 'customFormatter',
-                'class': 'logging.handlers.TimedRotatingFileHandler',
-                'level': 'DEBUG',
-                'filename': 'log/development.log',
-                'encoding': 'utf8',
-                'when': 'D',
-                'interval': 1,
-                'backupCount': 5
-            },
-            'consoleHandler': {
-                'class': 'logging.StreamHandler',
-                'level': 'DEBUG',
-                'formatter': 'customFormatter'
-            }
-        },
-        'root': {
-            'handlers': [],
-            'level': 'INFO'
-        },
-        'loggers': {
-            'development': {
-                'handlers': ['developmentHandler', 'consoleHandler'],
-                'level': 'DEBUG',
-                'propagate': 0
-            }
-        },
-        'disable_existing_loggers': False
-    })
+    config.dictConfig(log_conf)
 
     logger = getLogger('development')
 
