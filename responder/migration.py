@@ -1,3 +1,6 @@
+# import os
+# os.environ['ENV'] = 'test'
+
 from apps.db import Base, engine, session
 from videos.models import VideoData
 

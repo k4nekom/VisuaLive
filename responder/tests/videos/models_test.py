@@ -1,17 +1,6 @@
-import json
-
 import pytest
 
-from apps.db import session
 from videos.models import VideoData
-
-@pytest.fixture(scope="function")
-def testSession():
-    yield session
-    
-    session.query(VideoData).delete()
-    session.commit()
-
 
 class TestModelVideoInfo:
     def test_valid_insert(self, testSession):
@@ -26,10 +15,10 @@ class TestModelVideoInfo:
             comment_count = '[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]'
         )
 
-        session.add(videoData)
+        testSession.add(videoData)
 
-        session.commit()
+        testSession.commit()
         
-        result = session.query(VideoData).count()
+        result = testSession.query(VideoData).count()
         expected = 1
         assert result == expected
