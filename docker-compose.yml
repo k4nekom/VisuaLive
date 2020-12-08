@@ -10,6 +10,7 @@ services:
         tty: true
         environment:
             TZ: Asia/Tokyo
+            ENV: development
 
     db:
         container_name: db-container

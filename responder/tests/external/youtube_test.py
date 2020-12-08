@@ -22,7 +22,7 @@ class TestYoutube:
     def test_get_info(self, mocker, video):
         res_mock = mocker.Mock()
         res_mock.status_code = 200
-        with open('test/json/youtube_info.json') as f:
+        with open('tests/json/youtube_info.json') as f:
             res_mock.text = f.read()
 
         mocker.patch('requests.get').return_value = res_mock
@@ -40,7 +40,7 @@ class TestYoutube:
     def test_failing_get_info(self, mocker, video):
         res_mock = mocker.Mock()
         res_mock.status_code = 200
-        with open('test/json/youtube_info_fail.json') as f:
+        with open('tests/json/youtube_info_fail.json') as f:
             res_mock.text = f.read()
 
         mocker.patch('requests.get').return_value = res_mock
@@ -62,7 +62,7 @@ class TestYoutube:
 
 
     def test_get_comments(self, mocker, video):
-        with open('test/json/youtube_comment.json') as f:
+        with open('tests/json/youtube_comment.json') as f:
             comments = json.loads(f.read())
         mocker.patch.object(YoutubeVideo, '_get_chat_replay_data', return_value = comments)
 

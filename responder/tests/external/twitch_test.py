@@ -24,7 +24,7 @@ class TestTwitch:
     def test_get_info(self, mocker, video):
         res_mock = mocker.Mock()
         res_mock.status_code = 200
-        with open('test/json/video_info.json') as f:
+        with open('tests/json/video_info.json') as f:
             res_mock.text = f.read()
 
         mocker.patch('requests.get').return_value = res_mock
@@ -61,7 +61,7 @@ class TestTwitch:
         # 有効なトークンで動画情報を取得しようとした場合のモック
         ok_res_mock = mocker.Mock()
         ok_res_mock.status_code = 200
-        with open('test/json/video_info.json') as f:
+        with open('tests/json/video_info.json') as f:
             ok_res_mock.text = f.read()
 
         mocker.patch('requests.get').side_effect = [error_res_mock, ok_res_mock]
@@ -131,17 +131,17 @@ class TestTwitch:
         # 動画情報取得のモック
         get_info_mock = mocker.Mock()
         get_info_mock.status_code = 200
-        with open('test/json/video_info.json') as f:
+        with open('tests/json/video_info.json') as f:
             get_info_mock.text = f.read()
         # コメント取得のモック(_nextあり)
         with_next_mock = mocker.Mock()
         with_next_mock.status_code = 200
-        with open('test/json/twitch_comment_with_next.json') as f:
+        with open('tests/json/twitch_comment_with_next.json') as f:
             with_next_mock.text = f.read()
         # コメント取得のモック（_nextなし）
         without_next_mock = mocker.Mock()
         without_next_mock.status_code = 200
-        with open('test/json/twitch_comment_without_next.json') as f:
+        with open('tests/json/twitch_comment_without_next.json') as f:
             without_next_mock.text = f.read()
 
         mocker.patch('requests.get').side_effect = [get_info_mock, with_next_mock, without_next_mock]

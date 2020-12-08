@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from urls import api
-from external.youtube import YoutubeVideo
+from manage import api
+from videos.external import YoutubeVideo
 
 @pytest.fixture()
 def api_fixture():
@@ -19,17 +19,17 @@ def test_root_post_twitch(api_fixture, mocker):
     # 動画情報取得のモック
     get_info_mock = mocker.Mock()
     get_info_mock.status_code = 200
-    with open('test/json/video_info.json') as f:
+    with open('tests/json/video_info.json') as f:
         get_info_mock.text = f.read()
     # コメント取得のモック(_nextあり)
     with_next_mock = mocker.Mock()
     with_next_mock.status_code = 200
-    with open('test/json/twitch_comment_with_next.json') as f:
+    with open('tests/json/twitch_comment_with_next.json') as f:
         with_next_mock.text = f.read()
     # コメント取得のモック（_nextなし）
     without_next_mock = mocker.Mock()
     without_next_mock.status_code = 200
-    with open('test/json/twitch_comment_without_next.json') as f:
+    with open('tests/json/twitch_comment_without_next.json') as f:
         without_next_mock.text = f.read()
 
     mocker.patch('requests.get').side_effect = [
@@ -50,12 +50,12 @@ def test_root_post_youtube(api_fixture, mocker):
     # 動画情報取得のモック
     res_mock = mocker.Mock()
     res_mock.status_code = 200
-    with open('test/json/youtube_info.json') as f:
+    with open('tests/json/youtube_info.json') as f:
         res_mock.text = f.read()
     mocker.patch('requests.get').return_value = res_mock
 
     # コメント取得のモック
-    with open('test/json/youtube_comment.json') as f:
+    with open('tests/json/youtube_comment.json') as f:
         comments = json.loads(f.read())
     mocker.patch.object(YoutubeVideo, '_get_chat_replay_data', return_value = comments)
 
