@@ -1,11 +1,14 @@
 import re
 
-from apps.app import api, logger
+from apps.app import api, logger, set_logging
 from videos.exceptions import VideoNotFound
 from videos.external import TwitchVideo, TwitchVideoDemo, YoutubeVideo
 
 
 class CreateChartView:
+    def __init__(self):
+        set_logging()
+
     async def on_get(self, req, resp):
         resp.html = api.template('home.html', error_message=None)
 

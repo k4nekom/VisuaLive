@@ -5,6 +5,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
+from apps.app import set_logging 
+
 if os.environ['ENV'] == 'development':
     with open('config/db.json', 'r') as f:
         db_conf = json.load(f)['development']
@@ -38,3 +40,5 @@ session = scoped_session(sessionmaker(
     bind = engine
 ))
 
+#sqlalchemyのloggingを更新
+set_logging()

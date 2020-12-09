@@ -28,11 +28,21 @@
         "level": "INFO"
     },
     "loggers": {
-        "development": {
+        "app.development": {
             "handlers": ["developmentHandler", "consoleHandler"],
             "level": "DEBUG",
             "propagate": 0
-        }
+        },
+        "uvicorn.access": {
+            "handlers": ["developmentHandler", "consoleHandler"],
+            "level": "DEBUG",
+            "propagate": 0
+        },
+        "sqlalchemy.engine": {
+            "handlers": ["developmentHandler", "consoleHandler"],
+            "level": "DEBUG",
+            "propagate": 0
+        }  
     },
     "disable_existing_loggers": false
 }

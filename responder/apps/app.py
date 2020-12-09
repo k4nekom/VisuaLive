@@ -13,15 +13,12 @@ def create_app():
 
     return api
 
-def create_logger():
+api = create_app()
+
+def set_logging():
     with open('config/logging.json', 'r') as f:
         log_conf = json.load(f)
 
     config.dictConfig(log_conf)
 
-    logger = getLogger('development')
-
-    return logger
-
-api = create_app()
-logger = create_logger()
+logger = getLogger('app.development')
