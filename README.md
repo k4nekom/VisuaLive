@@ -5,6 +5,7 @@
 Python 3.7.9  
 responder 2.0.5  
 pytest 6.1.2  
+MySQL 5.7
 
 HTML  
 CSS  
