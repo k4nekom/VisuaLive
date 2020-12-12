@@ -4,18 +4,19 @@ import pytest
 
 from manage import api
 from videos.external import YoutubeVideo
+from videos.models import VideoData
 
 @pytest.fixture()
 def api_fixture():
     return api
 
 
-def test_root_get(api_fixture):
+def test_get(api_fixture):
     r = api.requests.get('/')
     assert r.status_code == 200
 
 
-def test_root_post_twitch(api_fixture, mocker):
+def test_twitch(api_fixture, testSession, mocker):
     # 動画情報取得のモック
     get_info_mock = mocker.Mock()
     get_info_mock.status_code = 200
@@ -45,8 +46,12 @@ def test_root_post_twitch(api_fixture, mocker):
     r = api.requests.post('/', params)
     assert r.status_code == 200
 
+    result = testSession.query(VideoData).count()
+    expected = 1
+    assert result == expected
 
-def test_root_post_youtube(api_fixture, mocker):
+
+def test_youtube(api_fixture, testSession, mocker):
     # 動画情報取得のモック
     res_mock = mocker.Mock()
     res_mock.status_code = 200
@@ -65,6 +70,29 @@ def test_root_post_youtube(api_fixture, mocker):
     r = api.requests.post('/', params)
     assert r.status_code == 200
 
+    result = testSession.query(VideoData).count()
+    expected = 1
+    assert result == expected
+
+
+# 動画がすでに取得済だった場合のテスト
+def test_video_info_acquired(api_fixture, insertedSession, mocker):
+    # 正常に動作するなら、request.get()は呼ばれないため、呼ばれたらエラーになるようにする
+    mock = mocker.Mock()
+    mock.status_code = 200
+    mock.text = '{"error": "test faling"}'
+    mocker.patch('requests.get').return_value = mock
+
+    params = json.dumps({
+        'url': 'https://www.twitch.tv/videos/739949384'
+    })
+    r = api.requests.post('/', params)
+    assert r.status_code == 200
+
+    result = insertedSession.query(VideoData).count()
+    expected = 1
+    assert result == expected
+
 
 @pytest.mark.parametrize(
     'url',
@@ -78,7 +106,7 @@ def test_root_post_youtube(api_fixture, mocker):
         ('https://www.youtube.com/watch?v=hjYmUjMaZ@')
     ]
 )
-def test_root_post_with_invalid_url(api_fixture, mocker, url):
+def test_post_with_invalid_url(api_fixture, testSession, mocker, url):
     params = json.dumps({
         'url': url
     })

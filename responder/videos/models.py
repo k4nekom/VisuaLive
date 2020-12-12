@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, Text, DATETIME
+from sqlalchemy import Column, Integer, String, DATETIME, JSON
 
 from apps.db import Base
 
@@ -12,8 +12,8 @@ class VideoData(Base):
     url = Column('url', String(255), unique=True, nullable=False)
     channel_url = Column('channel_url', String(255))
     duration_minutes = Column('duration_minutes', Integer, nullable=False)
-    w_count = Column('w_count', Text, nullable=False)
-    comment_count = Column('comment_count', Text, nullable=False)
+    w_count = Column('w_count', JSON, nullable=False)
+    comment_count = Column('comment_count', JSON, nullable=False)
     created_at = Column('created_at', DATETIME, nullable=False, default=datetime.now)
     updated_at = Column('updated_at', DATETIME, nullable=False, default=datetime.now, onupdate=datetime.now)
 
