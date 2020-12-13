@@ -122,6 +122,22 @@ class TwitchVideo(Video):
 
         return comments_data
 
+    
+    def get_data(self):
+        video_info = self.get_info()
+        video_comment_data = self.get_comment_data()
+        video_data = {
+            'user_name': video_info['user_name'],
+            'title': video_info['title'],
+            'broadcasted_at': video_info['created_at'],
+            'url': video_info['url'],
+            'channel_url': video_info['channel_url'],
+            'duration_minutes': video_info['duration_minutes'],
+            'w_count': video_comment_data['w_count'],
+            'comment_count': video_comment_data['comment_count']
+        }
+        return video_data
+
 
     # コメント末尾が w 草 かどうかを判定する関数
     def _has_kusa(self, comment):

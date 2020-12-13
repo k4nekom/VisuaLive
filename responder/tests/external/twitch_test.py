@@ -152,3 +152,34 @@ class TestTwitch:
     #     assert sum(comment_data['comment_count']) == 84
     #     assert type(comment_data['w_count'][0]) is int
     # ------------------------------------------
+
+    def test_get_data(self, mocker, video):
+        # 動画情報取得のモック
+        get_info_mock = mocker.Mock()
+        get_info_mock.status_code = 200
+        with open('tests/json/video_info.json') as f:
+            get_info_mock.text = f.read()
+        # コメント取得のモック(_nextあり)
+        with_next_mock = mocker.Mock()
+        with_next_mock.status_code = 200
+        with open('tests/json/twitch_comment_with_next.json') as f:
+            with_next_mock.text = f.read()
+        # コメント取得のモック（_nextなし）
+        without_next_mock = mocker.Mock()
+        without_next_mock.status_code = 200
+        with open('tests/json/twitch_comment_without_next.json') as f:
+            without_next_mock.text = f.read()
+
+        mocker.patch('requests.get').side_effect = [get_info_mock, with_next_mock, without_next_mock]
+
+        video_data = video.get_data()
+        assert 'user_name' in video_data
+        assert 'title' in video_data
+        assert 'broadcasted_at' in video_data
+        assert 'url' in video_data
+        assert 'channel_url' in video_data
+        assert 'duration_minutes' in video_data
+        assert 'comment_count' in video_data
+        assert 'w_count' in video_data
+
+
