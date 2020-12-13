@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="videoTitle"><a href="{{ video_info['url'] }}" target="_blank">{{ video_info['title'] }}</a></div>
+<div class="videoTitle"><a href="{{ video_data['url'] }}" target="_blank">{{ video_data['title'] }}</a></div>
 
 <div class="videoInfo">
     <table>
         <tr>
             <td>配信者</td>
-            <td><a href="{{ video_info['channel_url'] }}" target="_blank">
-                    {{ video_info['user_name'] }}
+            <td><a href="{{ video_data['channel_url'] }}" target="_blank">
+                    {{ video_data['user_name'] }}
                 </a></td>
         </tr>
         <tr>
             <td>配信日</td>
-            <td>{{ video_info['created_at'][0:10] }}</td>
+            <td>{{ video_data['broadcasted_at'][0:10] }}</td>
         </tr>
         <tr>
             <td>配信時間</td>
-            <td>{{ video_info['duration_minutes'] // 60 }}h {{ video_info['duration_minutes'] % 60 }}m</td>
+            <td>{{ video_data['duration_minutes'] // 60 }}h {{ video_data['duration_minutes'] % 60 }}m</td>
         </tr>
     </table>
 </div>
@@ -29,7 +29,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script>
 
 <script>
-    const data = {{ comment_data | tojson }};
+    const data = {{ video_data | tojson }};
     const data_length = data['w_count'].length;
 
     let label = [];

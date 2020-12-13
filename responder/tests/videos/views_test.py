@@ -7,16 +7,16 @@ from videos.external import YoutubeVideo
 from videos.models import VideoData
 
 @pytest.fixture()
-def api_fixture():
+def fixture_api():
     return api
 
 
-def test_get(api_fixture):
+def test_get(fixture_api):
     r = api.requests.get('/')
     assert r.status_code == 200
 
 
-def test_twitch(api_fixture, testSession, mocker):
+def test_get_data_from_twitch(fixture_api, having_no_data_session, mocker):
     # 動画情報取得のモック
     get_info_mock = mocker.Mock()
     get_info_mock.status_code = 200
@@ -35,7 +35,6 @@ def test_twitch(api_fixture, testSession, mocker):
 
     mocker.patch('requests.get').side_effect = [
                                                     get_info_mock, 
-                                                    get_info_mock,
                                                     with_next_mock, 
                                                     without_next_mock
                                                 ]
@@ -46,12 +45,12 @@ def test_twitch(api_fixture, testSession, mocker):
     r = api.requests.post('/', params)
     assert r.status_code == 200
 
-    result = testSession.query(VideoData).count()
+    result = having_no_data_session.query(VideoData).count()
     expected = 1
     assert result == expected
 
 
-def test_youtube(api_fixture, testSession, mocker):
+def test_get_data_from_youtube(fixture_api, having_no_data_session, mocker):
     # 動画情報取得のモック
     res_mock = mocker.Mock()
     res_mock.status_code = 200
@@ -70,13 +69,12 @@ def test_youtube(api_fixture, testSession, mocker):
     r = api.requests.post('/', params)
     assert r.status_code == 200
 
-    result = testSession.query(VideoData).count()
+    result = having_no_data_session.query(VideoData).count()
     expected = 1
     assert result == expected
 
 
-# 動画がすでに取得済だった場合のテスト
-def test_video_info_acquired(api_fixture, insertedSession, mocker):
+def test_get_data_from_db(fixture_api, having_data_session, mocker):
     # 正常に動作するなら、request.get()は呼ばれないため、呼ばれたらエラーになるようにする
     mock = mocker.Mock()
     mock.status_code = 200
@@ -84,13 +82,13 @@ def test_video_info_acquired(api_fixture, insertedSession, mocker):
     mocker.patch('requests.get').return_value = mock
 
     params = json.dumps({
-        'url': 'https://www.twitch.tv/videos/739949384'
+        'url': 'https://www.youtube.com/watch?v=iOavpCRbq-k'
     })
     r = api.requests.post('/', params)
     assert r.status_code == 200
 
-    result = insertedSession.query(VideoData).count()
-    expected = 1
+    result = having_data_session.query(VideoData).count()
+    expected = 2
     assert result == expected
 
 
@@ -106,7 +104,7 @@ def test_video_info_acquired(api_fixture, insertedSession, mocker):
         ('https://www.youtube.com/watch?v=hjYmUjMaZ@')
     ]
 )
-def test_post_with_invalid_url(api_fixture, testSession, mocker, url):
+def test_post_with_invalid_url(fixture_api, url):
     params = json.dumps({
         'url': url
     })
