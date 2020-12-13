@@ -128,11 +128,6 @@ class TestTwitch:
 
 
     def test_get_comments(self, mocker, video):
-        # 動画情報取得のモック
-        get_info_mock = mocker.Mock()
-        get_info_mock.status_code = 200
-        with open('tests/json/video_info.json') as f:
-            get_info_mock.text = f.read()
         # コメント取得のモック(_nextあり)
         with_next_mock = mocker.Mock()
         with_next_mock.status_code = 200
@@ -144,7 +139,7 @@ class TestTwitch:
         with open('tests/json/twitch_comment_without_next.json') as f:
             without_next_mock.text = f.read()
 
-        mocker.patch('requests.get').side_effect = [get_info_mock, with_next_mock, without_next_mock]
+        mocker.patch('requests.get').side_effect = [with_next_mock, without_next_mock]
 
         comment_data = video.get_comment_data()
         assert sum(comment_data['comment_count']) == 84

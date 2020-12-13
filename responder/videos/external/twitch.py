@@ -76,9 +76,7 @@ class TwitchVideo(Video):
             
     
     def get_comment_data(self):
-        info = self.get_info()
-        comment_count = [0] * (info['duration_minutes'])
-        w_count = [0] * (info['duration_minutes'])
+        comments = []
         
         # 一回目のコメント取得リクエスト
         url = 'https://api.twitch.tv/v5/videos/' + self.video_id + '/comments?content_offset_seconds=0'
@@ -87,12 +85,10 @@ class TwitchVideo(Video):
         res_dict = json.loads(res.text)
             
         for comment in res_dict['comments']:
-            commented_minute = int(comment['content_offset_seconds'] // 60)
-            comment_count[commented_minute] += 1
-            # コメントにwがあれば、w_countを増やす
-            t = comment['message']['body']
-            if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
-                w_count[commented_minute] += 1
+            comments.append({
+                'body': comment['message']['body'],
+                'commented_minutes': int(comment['content_offset_seconds']) // 60
+            })
 
         # 二回目以降のコメント取得リクエスト
         while '_next' in res_dict:
@@ -102,15 +98,48 @@ class TwitchVideo(Video):
             res_dict = json.loads(res.text)
 
             for comment in res_dict['comments']:
-                commented_minute = int(comment['content_offset_seconds'] // 60)
-                comment_count[commented_minute] += 1
-                # コメントにwがあれば、w_countを増やす
-                t = comment['message']['body']
-                if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
-                    w_count[commented_minute] += 1
+                comments.append({
+                    'body': comment['message']['body'],
+                    'commented_minutes': int(comment['content_offset_seconds']) // 60
+                })
+
+        # １分ごとの、コメント数、末尾がwのコメント数を数える
+        duration_minutes = comments[-1]['commented_minutes'] + 1
+
+        comment_count = [0] * duration_minutes
+        w_count = [0] * duration_minutes
+
+        for comment in comments:
+            comment_count[comment['commented_minutes']] += 1
+
+            if self._has_kusa(comment['body']):
+                w_count[comment['commented_minutes']] += 1
 
         comments_data = {
             'comment_count': comment_count,
             'w_count': w_count
         }
+
         return comments_data
+
+
+    # コメント末尾が w 草 かどうかを判定する関数
+    def _has_kusa(self, comment):
+        if comment[-1] == 'w':
+            return True
+        
+        if comment[-1] == 'W':
+            return True
+        
+        if comment[-1] == 'ｗ':
+            return True
+
+
+        if comment[-1] == 'W':
+            return True
+        
+        if comment[-1] == '草':
+            return True
+
+        return False
+
