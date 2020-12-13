@@ -29,7 +29,7 @@ class TestTwitch:
 
         mocker.patch('requests.get').return_value = res_mock
 
-        video_info = video.get_info()
+        video_info = video._get_info()
         assert 'user_name' in video_info
         assert 'title' in video_info
         assert 'created_at' in video_info
@@ -41,7 +41,7 @@ class TestTwitch:
 
     # ------実際にtwitch apiを叩くテスト----------
     # def test_get_info_real_api(self, video):
-    #     video_info = video.get_info()
+    #     video_info = video._get_info()
     #     assert 'user_name' in video_info
     #     assert 'title' in video_info
     #     assert 'created_at' in video_info
@@ -75,7 +75,7 @@ class TestTwitch:
         
         mocker.patch('requests.post').return_value = get_token_mock
 
-        video_info = video.get_info()
+        video_info = video._get_info()
 
         assert 'user_name' in video_info
         assert 'title' in video_info
@@ -94,7 +94,7 @@ class TestTwitch:
         mocker.patch('requests.get').return_value = res_mock
 
         with pytest.raises(VideoNotFound):
-            video.get_info()
+            video._get_info()
 
 
     def test_get_token(self, mocker, video):
@@ -141,14 +141,14 @@ class TestTwitch:
 
         mocker.patch('requests.get').side_effect = [with_next_mock, without_next_mock]
 
-        comment_data = video.get_comment_data()
+        comment_data = video._get_comment_data()
         assert sum(comment_data['comment_count']) == 84
         assert type(comment_data['w_count'][0]) is int
 
 
     # ------実際にtwitch apiを叩くテスト----------
     # def test_get_comments_real_api(self, video):
-    #     comment_data = video.get_comment_data()
+    #     comment_data = video._get_comment_data()
     #     assert sum(comment_data['comment_count']) == 84
     #     assert type(comment_data['w_count'][0]) is int
     # ------------------------------------------

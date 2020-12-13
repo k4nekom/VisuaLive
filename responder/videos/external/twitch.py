@@ -17,6 +17,22 @@ class TwitchVideo(Video):
         self.client_secret = config['twitch']['client_secret']
         self.app_access_token = config['twitch']['app_access_token']
 
+        
+    def get_data(self):
+        video_info = self._get_info()
+        video_comment_data = self._get_comment_data()
+        video_data = {
+            'user_name': video_info['user_name'],
+            'title': video_info['title'],
+            'broadcasted_at': video_info['created_at'],
+            'url': video_info['url'],
+            'channel_url': video_info['channel_url'],
+            'duration_minutes': video_info['duration_minutes'],
+            'w_count': video_comment_data['w_count'],
+            'comment_count': video_comment_data['comment_count']
+        }
+        return video_data
+
 
     def _get_token(self):
         with open('config/external.json', 'r') as f:
@@ -41,7 +57,7 @@ class TwitchVideo(Video):
 
 
     # このメソッドは例外投げます
-    def get_info(self):
+    def _get_info(self):
         url = 'https://api.twitch.tv/helix/videos?id=' + self.video_id
         headers = {
             'Authorization': 'Bearer ' + self.app_access_token,
@@ -75,7 +91,7 @@ class TwitchVideo(Video):
         return video_info
             
     
-    def get_comment_data(self):
+    def _get_comment_data(self):
         comments = []
         
         # 一回目のコメント取得リクエスト
@@ -112,7 +128,7 @@ class TwitchVideo(Video):
         for comment in comments:
             comment_count[comment['commented_minutes']] += 1
 
-            if self._has_kusa(comment['body']):
+            if super().has_kusa(comment['body']):
                 w_count[comment['commented_minutes']] += 1
 
         comments_data = {
@@ -121,41 +137,4 @@ class TwitchVideo(Video):
         }
 
         return comments_data
-
-    
-    def get_data(self):
-        video_info = self.get_info()
-        video_comment_data = self.get_comment_data()
-        video_data = {
-            'user_name': video_info['user_name'],
-            'title': video_info['title'],
-            'broadcasted_at': video_info['created_at'],
-            'url': video_info['url'],
-            'channel_url': video_info['channel_url'],
-            'duration_minutes': video_info['duration_minutes'],
-            'w_count': video_comment_data['w_count'],
-            'comment_count': video_comment_data['comment_count']
-        }
-        return video_data
-
-
-    # コメント末尾が w 草 かどうかを判定する関数
-    def _has_kusa(self, comment):
-        if comment[-1] == 'w':
-            return True
-        
-        if comment[-1] == 'W':
-            return True
-        
-        if comment[-1] == 'ｗ':
-            return True
-
-
-        if comment[-1] == 'W':
-            return True
-        
-        if comment[-1] == '草':
-            return True
-
-        return False
 

@@ -21,7 +21,7 @@ class YoutubeVideo(Video):
 
 
     # このメソッドは例外投げます
-    def get_info(self):
+    def _get_info(self):
         url = 'https://www.googleapis.com/youtube/v3/videos'\
               '?id=' + self.video_id + \
               '&key=' + self.api_key + \
@@ -50,7 +50,7 @@ class YoutubeVideo(Video):
         return video_info
 
 
-    def get_comment_data(self):
+    def _get_comment_data(self):
         try:
             comments = self._get_chat_replay_data()
         except LiveChatReplayDisabled:
@@ -85,9 +85,8 @@ class YoutubeVideo(Video):
 
             comment_count[commented_minute] += 1
             # コメントにwがあれば、w_countを増やす
-            t = comment['text']
-            if len(t) != 0:
-                if (t[-1] == 'w') or (t[-1] == 'W') or (t[-1] == 'ｗ') or (t[-1] == 'W') or (t[-1] == '草'):
+            if len(comment['text']) != 0:
+                if super().has_kusa(comment['text']):
                     w_count[commented_minute] += 1
 
         comments_data = {
@@ -247,3 +246,19 @@ class YoutubeVideo(Video):
             chatlog['type'] = 'NORMALCHAT'
 
         return(chatlog)
+
+
+    def get_data(self):
+        video_info = self._get_info()
+        video_comment_data = self._get_comment_data()
+        video_data = {
+            'user_name': video_info['user_name'],
+            'title': video_info['title'],
+            'broadcasted_at': video_info['created_at'],
+            'url': video_info['url'],
+            'channel_url': video_info['channel_url'],
+            'duration_minutes': video_info['duration_minutes'],
+            'w_count': video_comment_data['w_count'],
+            'comment_count': video_comment_data['comment_count']
+        }
+        return video_data
