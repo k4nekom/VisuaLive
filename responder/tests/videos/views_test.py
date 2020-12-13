@@ -2,6 +2,7 @@ import json
 
 import pytest
 
+from apps.app import logger
 from manage import api
 from videos.external import YoutubeVideo
 from videos.models import VideoData
@@ -14,6 +15,7 @@ def fixture_api():
 def test_get(fixture_api):
     r = api.requests.get('/')
     assert r.status_code == 200
+    assert '<div class="testHome"></div>' in r.text
 
 
 def test_get_data_from_twitch(fixture_api, having_no_data_session, mocker):
@@ -44,6 +46,7 @@ def test_get_data_from_twitch(fixture_api, having_no_data_session, mocker):
     })
     r = api.requests.post('/', params)
     assert r.status_code == 200
+    assert '<div class="testGrapth"></div>' in r.text
 
     result = having_no_data_session.query(VideoData).count()
     expected = 1
@@ -67,7 +70,9 @@ def test_get_data_from_youtube(fixture_api, having_no_data_session, mocker):
         'url': 'https://www.youtube.com/watch?v=iOavpCRbq-k'
     })
     r = api.requests.post('/', params)
+
     assert r.status_code == 200
+    assert '<div class="testGrapth"></div>' in r.text
 
     result = having_no_data_session.query(VideoData).count()
     expected = 1
@@ -86,6 +91,7 @@ def test_get_data_from_db(fixture_api, having_data_session, mocker):
     })
     r = api.requests.post('/', params)
     assert r.status_code == 200
+    assert '<div class="testGrapth"></div>' in r.text
 
     result = having_data_session.query(VideoData).count()
     expected = 2
@@ -110,3 +116,4 @@ def test_post_with_invalid_url(fixture_api, url):
     })
     r = api.requests.post('/', params)
     assert r.status_code == 200
+    assert '<div class="testHome"></div>' in r.text
