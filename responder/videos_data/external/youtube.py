@@ -7,10 +7,10 @@ from bs4 import BeautifulSoup
 from retry import retry
 
 from apps.app import logger
-from .video import Video
-from videos.exceptions import VideoNotFound, LiveChatReplayDisabled, ContinuationURLNotFound
+from .base import ExternalBase
+from videos_data.exceptions import VideoNotFound, LiveChatReplayDisabled, ContinuationURLNotFound
 
-class YoutubeVideo(Video):
+class YoutubeVideo(ExternalBase):
     def __init__(self, url):
         m = re.search('[0-9A-Za-z-_]{11}', url)
         self.video_id = m.group()

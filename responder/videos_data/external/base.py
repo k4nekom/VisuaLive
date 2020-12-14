@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class Video(metaclass=ABCMeta):
+class ExternalBase(metaclass=ABCMeta):
     @abstractmethod
     def get_data(self):
         pass

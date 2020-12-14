@@ -1,7 +1,7 @@
 import pytest
 
 from apps.db import session
-from videos.models import VideoData
+from videos_data.models import VideoData
 
 @pytest.fixture(scope="function")
 def having_no_data_session():

@@ -1,9 +1,9 @@
 import pytest
 
-from videos.models import VideoData
+from videos_data.models import VideoData
 
 class TestModelVideoInfo:
-    def test_valid_insert(self, testSession):
+    def test_valid_insert(self, having_no_data_session):
         videoData = VideoData(
             username = 'masaki',
             title = 'testだよ',
@@ -15,10 +15,10 @@ class TestModelVideoInfo:
             comment_count = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
         )
 
-        testSession.add(videoData)
+        having_no_data_session.add(videoData)
 
-        testSession.commit()
+        having_no_data_session.commit()
         
-        result = testSession.query(VideoData).count()
+        result = having_no_data_session.query(VideoData).count()
         expected = 1
         assert result == expected

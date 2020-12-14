@@ -1,8 +1,8 @@
 import re
 
 from apps.app import api, logger, set_logging
-from videos.exceptions import VideoNotFound
-from videos.service import VideoDataService
+from videos_data.exceptions import VideoNotFound
+from videos_data.service import VideoDataService
 
 class CreateChartView:
     def __init__(self):

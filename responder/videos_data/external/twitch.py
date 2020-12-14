@@ -2,10 +2,10 @@ import json
 import re
 import requests
 
-from .video import Video
-from videos.exceptions import VideoNotFound
+from .base import ExternalBase
+from videos_data.exceptions import VideoNotFound
 
-class TwitchVideo(Video):
+class TwitchVideo(ExternalBase):
     def __init__(self, url):
         m = re.search('[0-9]{9}', url)
         self.video_id = m.group()

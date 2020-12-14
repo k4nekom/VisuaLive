@@ -1,6 +1,6 @@
 from apps.app import api
 
-from videos.views import CreateChartView
+from videos_data.views import CreateChartView
 
 api.add_route("/", CreateChartView)
 

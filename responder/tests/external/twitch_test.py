@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from videos.external import TwitchVideo
-from videos.exceptions import VideoNotFound
+from videos_data.external import TwitchVideo
+from videos_data.exceptions import VideoNotFound
 
 @pytest.fixture()
 def video():

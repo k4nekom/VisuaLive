@@ -2,16 +2,23 @@ import json
 
 import pytest
 
-from videos.service import VideoDataService
-from videos.models import VideoData
-from videos.external import YoutubeVideo
+from apps.app import logger
+from manage import api
+from videos_data.external import YoutubeVideo
+from videos_data.models import VideoData
 
 @pytest.fixture()
-def service():
-    return VideoDataService()
+def fixture_api():
+    return api
 
 
-def test_get_data_from_twitch(service, having_no_data_session, mocker):
+def test_get(fixture_api):
+    r = fixture_api.requests.get('/')
+    assert r.status_code == 200
+    assert '<div class="testHome"></div>' in r.text
+
+
+def test_get_data_from_twitch(fixture_api, having_no_data_session, mocker):
     # 動画情報取得のモック
     get_info_mock = mocker.Mock()
     get_info_mock.status_code = 200
@@ -34,25 +41,19 @@ def test_get_data_from_twitch(service, having_no_data_session, mocker):
                                                     without_next_mock
                                                 ]
 
-    url = 'https://www.twitch.tv/videos/739949384'
-    video_type = 'twitch'
-    video_data = service.get_video_data(url, video_type)
-
-    assert 'user_name' in video_data
-    assert 'title' in video_data
-    assert 'broadcasted_at' in video_data
-    assert 'url' in video_data
-    assert 'channel_url' in video_data
-    assert 'duration_minutes' in video_data
-    assert 'comment_count' in video_data
-    assert 'w_count' in video_data
+    params = json.dumps({
+        'url': 'https://www.twitch.tv/videos/739949384'
+    })
+    r = fixture_api.requests.post('/', params)
+    assert r.status_code == 200
+    assert '<div class="testGrapth"></div>' in r.text
 
     result = having_no_data_session.query(VideoData).count()
     expected = 1
     assert result == expected
 
 
-def test_get_data_from_youtube(service, having_no_data_session, mocker):
+def test_get_data_from_youtube(fixture_api, having_no_data_session, mocker):
     # 動画情報取得のモック
     res_mock = mocker.Mock()
     res_mock.status_code = 200
@@ -65,45 +66,54 @@ def test_get_data_from_youtube(service, having_no_data_session, mocker):
         comments = json.loads(f.read())
     mocker.patch.object(YoutubeVideo, '_get_chat_replay_data', return_value = comments)
 
-    url = 'https://www.youtube.com/watch?v=iOavpCRbq-k'
-    video_type = 'youtube'
-    video_data = service.get_video_data(url, video_type)
+    params = json.dumps({
+        'url': 'https://www.youtube.com/watch?v=iOavpCRbq-k'
+    })
+    r = fixture_api.requests.post('/', params)
 
-    assert 'user_name' in video_data
-    assert 'title' in video_data
-    assert 'broadcasted_at' in video_data
-    assert 'url' in video_data
-    assert 'channel_url' in video_data
-    assert 'duration_minutes' in video_data
-    assert 'comment_count' in video_data
-    assert 'w_count' in video_data
+    assert r.status_code == 200
+    assert '<div class="testGrapth"></div>' in r.text
 
     result = having_no_data_session.query(VideoData).count()
     expected = 1
     assert result == expected
 
 
-# 動画の情報がすでにDBに保存されていた場合のテスト
-def test_get_data_from_db(service, having_data_session, mocker):
+def test_get_data_from_db(fixture_api, having_data_session, mocker):
     # 正常に動作するなら、request.get()は呼ばれないため、呼ばれたらエラーになるようにする
     mock = mocker.Mock()
     mock.status_code = 200
     mock.text = '{"error": "test faling"}'
     mocker.patch('requests.get').return_value = mock
 
-    url = 'https://www.youtube.com/watch?v=iOavpCRbq-k'
-    video_type = 'youtube'
-    video_data = service.get_video_data(url, video_type)
-
-    assert 'user_name' in video_data
-    assert 'title' in video_data
-    assert 'broadcasted_at' in video_data
-    assert 'url' in video_data
-    assert 'channel_url' in video_data
-    assert 'duration_minutes' in video_data
-    assert 'comment_count' in video_data
-    assert 'w_count' in video_data
+    params = json.dumps({
+        'url': 'https://www.youtube.com/watch?v=iOavpCRbq-k'
+    })
+    r = fixture_api.requests.post('/', params)
+    assert r.status_code == 200
+    assert '<div class="testGrapth"></div>' in r.text
 
     result = having_data_session.query(VideoData).count()
     expected = 2
     assert result == expected
+
+
+@pytest.mark.parametrize(
+    'url',
+    [
+        ('https://www.twitch.tv/videos/1234567890'),
+        ('https://www.twitch.tv/videos/12345678'),
+        ('https://www.twitch.tv/videos/12345678a'),
+        ('https://www.twitch.tv/videos/000000000'),
+        ('https://www.youtube.com/watch?v=hjYmUjMaZA'),
+        ('https://www.youtube.com/watch?v=hjYmUjMaZAa'),
+        ('https://www.youtube.com/watch?v=hjYmUjMaZ@')
+    ]
+)
+def test_post_with_invalid_url(fixture_api, url):
+    params = json.dumps({
+        'url': url
+    })
+    r = fixture_api.requests.post('/', params)
+    assert r.status_code == 200
+    assert '<div class="testHome"></div>' in r.text

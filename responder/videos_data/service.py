@@ -1,6 +1,6 @@
 from apps.db import session
-from videos.models import VideoData
-from videos.external import YoutubeVideo, TwitchVideo
+from videos_data.models import VideoData
+from videos_data.external import YoutubeVideo, TwitchVideo
 
 class VideoDataService:
     def get_video_data(self, url, video_type):

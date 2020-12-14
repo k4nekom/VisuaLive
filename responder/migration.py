@@ -1,7 +1,7 @@
 import os
 
 from apps.db import Base, engine, session
-from videos.models import VideoData
+from videos_data.models import VideoData
 
 if __name__ == '__main__':
     Base.metadata.create_all(engine, checkfirst=True)
