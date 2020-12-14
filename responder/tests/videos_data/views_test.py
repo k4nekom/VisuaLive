@@ -12,12 +12,6 @@ def fixture_api():
     return api
 
 
-def test_get(fixture_api):
-    r = fixture_api.requests.get('/')
-    assert r.status_code == 200
-    assert '<div class="testHome"></div>' in r.text
-
-
 def test_get_data_from_twitch(fixture_api, having_no_data_session, mocker):
     # 動画情報取得のモック
     get_info_mock = mocker.Mock()
@@ -44,7 +38,7 @@ def test_get_data_from_twitch(fixture_api, having_no_data_session, mocker):
     params = json.dumps({
         'url': 'https://www.twitch.tv/videos/739949384'
     })
-    r = fixture_api.requests.post('/', params)
+    r = fixture_api.requests.post('/chart', params)
     assert r.status_code == 200
     assert '<div class="testGrapth"></div>' in r.text
 
@@ -69,7 +63,7 @@ def test_get_data_from_youtube(fixture_api, having_no_data_session, mocker):
     params = json.dumps({
         'url': 'https://www.youtube.com/watch?v=iOavpCRbq-k'
     })
-    r = fixture_api.requests.post('/', params)
+    r = fixture_api.requests.post('/chart', params)
 
     assert r.status_code == 200
     assert '<div class="testGrapth"></div>' in r.text
@@ -89,7 +83,7 @@ def test_get_data_from_db(fixture_api, having_data_session, mocker):
     params = json.dumps({
         'url': 'https://www.youtube.com/watch?v=iOavpCRbq-k'
     })
-    r = fixture_api.requests.post('/', params)
+    r = fixture_api.requests.post('/chart', params)
     assert r.status_code == 200
     assert '<div class="testGrapth"></div>' in r.text
 
@@ -114,6 +108,6 @@ def test_post_with_invalid_url(fixture_api, url):
     params = json.dumps({
         'url': url
     })
-    r = fixture_api.requests.post('/', params)
+    r = fixture_api.requests.post('/chart', params)
     assert r.status_code == 200
     assert '<div class="testHome"></div>' in r.text
