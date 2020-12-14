@@ -3,7 +3,7 @@ import json
 import pytest
 
 from apps.app import logger
-from manage import api
+from apps.urls import api
 from videos_data.external import YoutubeVideo
 from videos_data.models import VideoData
 

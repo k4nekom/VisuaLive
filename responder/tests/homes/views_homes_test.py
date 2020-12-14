@@ -1,6 +1,6 @@
 import pytest
 
-from manage import api
+from apps.urls import api
 
 @pytest.fixture()
 def fixture_api():
