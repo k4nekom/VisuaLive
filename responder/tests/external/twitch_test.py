@@ -10,7 +10,7 @@ def video():
     return TwitchVideo('https://www.twitch.tv/videos/739949384')
 
 
-class TestTwitch:
+class TestInit:
     def test_init(self, video):
         with open('config/external.json', 'r') as f:
             config = json.load(f)
@@ -21,6 +21,8 @@ class TestTwitch:
         assert video.app_access_token == config['twitch']['app_access_token']
 
 
+class TestGetInfo:
+    # twithcから動画情報を取得し、正しく加工できているかのテスト
     def test_get_info(self, mocker, video):
         res_mock = mocker.Mock()
         res_mock.status_code = 200
@@ -38,8 +40,7 @@ class TestTwitch:
         assert 'duration_minutes' in video_info
         assert type(video_info['duration_minutes']) is int
 
-
-    # ------実際にtwitch apiを叩くテスト----------
+    # 実際にtwitch apiを叩き、twithcから動画情報を取得し、正しく加工できているかのテスト
     # def test_get_info_real_api(self, video):
     #     video_info = video._get_info()
     #     assert 'user_name' in video_info
@@ -49,10 +50,9 @@ class TestTwitch:
     #     assert 'channel_url' in video_info
     #     assert 'duration_minutes' in video_info
     #     assert type(video_info['duration_minutes']) is int
-    # -----------------------------------------------------
 
 
-    # app_access_tokenの期限が切れて、無効になっていた場合のテスト
+    # app_access_tokenの期限が切れていて、tokenの再取得を行う場合のテスト
     def test_get_info_with_invalid_token(self, mocker, video):
         # 無効なトークンで動画情報を取得しようとした場合のモック
         error_res_mock = mocker.Mock()
@@ -86,7 +86,7 @@ class TestTwitch:
         assert type(video_info['duration_minutes']) is int
 
 
-    # 動画が削除、公開終了していた場合のテスト
+    # 動画が削除、公開終了していて、動画情報を取得できない場合のテスト
     def test_get_info_video_not_fount(self, mocker, video):
         res_mock = mocker.Mock()
         res_mock.status_code = 404
@@ -96,7 +96,7 @@ class TestTwitch:
         with pytest.raises(VideoNotFound):
             video._get_info()
 
-
+class TestGetToken:
     def test_get_token(self, mocker, video):
         with open('config/external.json', 'r') as f:
             config = json.load(f)
@@ -113,21 +113,20 @@ class TestTwitch:
         # テスト用に変更したtokenを元に戻す
         with open('config/external.json', 'w') as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
-        # テスト用に変更したtokenが元に戻っているか確認
-        # assert video.app_access_token == config['twitch']['app_access_token']
 
 
-    # ------実際にtwitch apiを叩くテスト----------
+    # 実際にtwitch apiを叩いてtokenを取得するテスト
     # def test_get_token_real_api(self, mocker, video):
     #     with open('config/external.json', 'r') as f:
     #         config = json.load(f)
 
     #     video._get_token()
     #     assert video.app_access_token != config['twitch']['app_access_token']   
-    # -------------------------------------------------
 
 
-    def test_get_comments(self, mocker, video):
+class TestGetCommentData:
+    # 動画のコメントを取得し、正しく加工できているかのテスト
+    def test_get_comment_data(self, mocker, video):
         # コメント取得のモック(_nextあり)
         with_next_mock = mocker.Mock()
         with_next_mock.status_code = 200
@@ -146,13 +145,14 @@ class TestTwitch:
         assert type(comment_data['w_count'][0]) is int
 
 
-    # ------実際にtwitch apiを叩くテスト----------
+    # 実際にtwitch apiを叩き、動画のコメントを取得し、正しく加工できているかのテスト
     # def test_get_comments_real_api(self, video):
     #     comment_data = video._get_comment_data()
     #     assert sum(comment_data['comment_count']) == 84
     #     assert type(comment_data['w_count'][0]) is int
-    # ------------------------------------------
 
+
+class TestGetData:
     def test_get_data(self, mocker, video):
         # 動画情報取得のモック
         get_info_mock = mocker.Mock()
